@@ -50,14 +50,17 @@ export function Home() {
         <meta name="title" content="AVD West Bengal - Association of Veterinary Doctors" />
         <meta name="description" content="A premier professional body representing veterinarians across West Bengal, dedicated to excellence in animal healthcare and professional welfare." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://avd-gais.vercel.app/" />
         <meta property="og:title" content="AVD West Bengal - Association of Veterinary Doctors" />
         <meta property="og:description" content="A premier professional body representing veterinarians across West Bengal." />
-        <meta property="og:image" content="https://ik.imagekit.io/dgevdmg7em/AVD/20260519%20AVD%20Photos%20(8).webp?tr=f-jpg&updatedAt=1779185033992" />
+        <meta property="og:image" content="https://ik.imagekit.io/dgevdmg7em/AVD/20260519%20AVD%20Photos%20(8).webp?tr=f-jpg,w-1200,h-630,c-at_max,q-80" />
         <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="AVD West Bengal - Association of Veterinary Doctors" />
         <meta property="twitter:description" content="A premier professional body representing veterinarians across West Bengal." />
-        <meta property="twitter:image" content="https://ik.imagekit.io/dgevdmg7em/AVD/20260519%20AVD%20Photos%20(8).webp?tr=f-jpg&updatedAt=1779185033992" />
+        <meta property="twitter:image" content="https://ik.imagekit.io/dgevdmg7em/AVD/20260519%20AVD%20Photos%20(8).webp?tr=f-jpg,w-1200,h-630,c-at_max,q-80" />
         <script type="application/ld+json">
           {JSON.stringify(ldJson)}
         </script>
@@ -172,6 +175,22 @@ export function Home() {
           <p className="text-base leading-relaxed text-slate-600">
             AVD is a professional association of veterinarians, registered as a society under the West Bengal Societies Registration Act, 1961. We are dedicated to advancing the veterinary profession, advocating for member welfare, and supporting the livestock development of the state through scientific advancement and public policy engagement.
           </p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <div className="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:border-saffron-200 transition-colors">
+               <h3 className="text-sm font-bold text-saffron-600 uppercase tracking-widest mb-2 border-b border-saffron-100 pb-2">Vision</h3>
+               <p className="text-xs text-slate-600 leading-relaxed text-justify line-clamp-6">To carry the veterinary profession of West Bengal to the pinnacle of its dignity, strength, and service, so that no power can cast an evil eye on the welfare of its animals or the standing of its doctors.</p>
+            </div>
+            <div className="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:border-blue-200 transition-colors">
+               <h3 className="text-sm font-bold text-blue-600 uppercase tracking-widest mb-2 border-b border-blue-100 pb-2">Mission</h3>
+               <p className="text-xs text-slate-600 leading-relaxed text-justify line-clamp-6">The well-being of animals and the well-being of the people who depend on them are one single life-breath. They cannot be separated. AVD exists to protect both through discipline, vigilance, and unity.</p>
+            </div>
+            <div className="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:border-emerald-200 transition-colors">
+               <h3 className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-2 border-b border-emerald-100 pb-2">Objectives</h3>
+               <p className="text-xs text-slate-600 leading-relaxed text-justify line-clamp-6">Organize the entire profession. Protect the dignity and welfare of the veterinarian. Advance animal health and welfare as a public duty. Strengthen the foundations of the profession.</p>
+            </div>
+          </div>
+          
           <div className="pt-6 flex flex-col sm:flex-row gap-4 sm:gap-6">
             <div className="flex flex-col px-6 py-5 sm:py-4 bg-slate-50 rounded-xl border border-slate-100 shadow-sm w-full sm:w-auto">
               <span className="text-3xl font-extrabold text-slate-800 mb-1">800<span className="text-saffron-500">+</span></span>
