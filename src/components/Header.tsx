@@ -18,7 +18,7 @@ export function Header() {
   const location = useLocation();
 
   return (
-    <header className="h-20 bg-white border-b border-slate-200 sticky top-0 z-50 flex items-center justify-between px-6 lg:px-10 shrink-0">
+    <header className="h-20 bg-white/80 backdrop-blur-md border-b border-slate-200/50 sticky top-0 z-50 flex items-center justify-between px-6 lg:px-10 shrink-0 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
       <nav className="flex w-full items-center justify-between" aria-label="Global">
         <div className="flex items-center gap-3">
           <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-3">
