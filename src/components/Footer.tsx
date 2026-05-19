@@ -13,7 +13,6 @@ export function Footer() {
             <img src="https://ik.imagekit.io/dgevdmg7em/AVD/20260517%20Logo_AVD_trans.webp" alt="AVD Logo" className="w-12 h-12 object-contain brightness-0 invert" />
             <div className="flex flex-col">
               <span className="font-bold text-white text-lg leading-tight tracking-tight">AVD West Bengal</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-saffron-400 font-bold">Est. 1961</span>
             </div>
           </div>
           <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
@@ -67,12 +66,12 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 border-t border-slate-800/50 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500 relative z-10">
+      <div className="max-w-7xl mx-auto pt-8 border-t border-slate-800/50 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500 relative z-10 text-center md:text-left">
         <p>&copy; {new Date().getFullYear()} AVD West Bengal (Reg. No. 34784). All Rights Reserved.</p>
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 items-center">
-          <Link to="/about" className="hover:text-saffron-400 transition-colors">Privacy Policy</Link>
-          <Link to="/contact" className="hover:text-saffron-400 transition-colors">Terms of Service</Link>
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-x-8 gap-y-4 items-center">
+          <Link to="/privacy" className="hover:text-saffron-400 transition-colors py-2 sm:py-0">Privacy Policy</Link>
+          <Link to="/terms" className="hover:text-saffron-400 transition-colors py-2 sm:py-0">Terms of Service</Link>
+          <div className="flex items-center gap-2 py-2 sm:py-0">
             <span className="w-2 h-2 rounded-full bg-saffron-500 animate-pulse shadow-[0_0_8px_rgba(255,153,51,0.5)]"></span>
             <span className="font-medium tracking-wide">Portal v2.1</span>
           </div>

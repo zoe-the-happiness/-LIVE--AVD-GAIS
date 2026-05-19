@@ -11,9 +11,14 @@ export function Membership() {
           <div className="bg-white rounded-2xl border border-gray-200 p-10 shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-gray-900">Apply for Membership</h3>
             <p className="text-gray-500 mb-6">Online registration will be available shortly. For now, please contact your district representative or the head office.</p>
-            <button className="bg-blue-600 text-white rounded-md px-4 py-2 font-medium hover:bg-blue-500 transition-colors w-full sm:w-auto">
+            <a 
+              href="https://drive.google.com/file/d/1HasUvMwGKvn1KYCAiAmHDVKJw-KW5-ND/view?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex justify-center bg-gradient-to-r from-saffron-500 to-saffron-600 text-white rounded-lg px-6 py-3 font-bold hover:from-saffron-400 hover:to-saffron-500 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 w-full sm:w-auto text-center"
+            >
               Download Application Form
-            </button>
+            </a>
           </div>
         </div>
       </div>

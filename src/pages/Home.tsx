@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Shield, Users, Image as ImageIcon, X } from "lucide-react";
 import { FaqAccordion } from "../components/FaqAccordion";
 import { Helmet } from "react-helmet-async";
-import { Carousel } from "../components/Carousel";
+import { BackgroundCarousel } from "../components/BackgroundCarousel";
 import { allPhotos, heroPhotos } from "../data/photos";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -61,48 +61,42 @@ export function Home() {
       </Helmet>
 
       {/* Premium Hero Section */}
-      <section className="relative px-6 py-20 lg:py-28 lg:px-12 bg-slate-950 flex flex-col md:flex-row items-center justify-between overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Abstract Glows */}
-          <div className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] rounded-full bg-saffron-900/20 blur-[120px] mix-blend-screen"></div>
-          <div className="absolute -bottom-1/2 -left-1/4 w-[800px] h-[800px] rounded-full bg-blue-900/20 blur-[100px] mix-blend-screen"></div>
-          <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 opacity-[0.03]">
-            <path d="M0 100 L100 0 L100 100 Z" fill="white"/>
-          </svg>
+      <section className="relative px-5 py-24 sm:py-28 lg:py-36 lg:px-12 flex flex-col md:flex-row items-center justify-center md:justify-start overflow-hidden min-h-[100svh] md:min-h-[85vh]">
+        <BackgroundCarousel images={heroPhotos} interval={10000} />
+        
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <div className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] rounded-full bg-saffron-900/30 blur-[100px] md:blur-[150px] mix-blend-screen"></div>
+          <div className="absolute -bottom-1/2 -left-1/4 w-[500px] h-[500px] md:w-[800px] md:h-[800px] rounded-full bg-blue-900/20 blur-[80px] md:blur-[120px] mix-blend-screen"></div>
         </div>
         
-        <div className="relative z-10 max-w-2xl text-white">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-saffron-500/10 border border-saffron-500/20 rounded-full text-xs font-semibold mb-6 tracking-wide text-saffron-300 shadow-inner">
+        <div className="relative z-10 max-w-3xl text-white md:pl-8 lg:pl-12 w-full text-center md:text-left">
+          <div className="inline-flex items-center gap-2 px-4 py-2 sm:px-3 sm:py-1.5 bg-saffron-500/10 border border-saffron-500/20 rounded-full text-[10px] sm:text-xs font-bold mb-6 sm:mb-8 tracking-widest text-saffron-300 shadow-inner backdrop-blur-sm mx-auto md:mx-0">
              <span className="w-2 h-2 rounded-full bg-saffron-500 animate-pulse"></span>
              ESTABLISHED 1961
           </div>
-          <h1 className="text-4xl sm:text-6xl lg:text-[4rem] font-extrabold leading-[1.1] mb-6 tracking-tight drop-shadow-sm">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">Association of</span><br/>
+          <h1 className="text-4xl sm:text-6xl lg:text-[4.5rem] font-extrabold leading-[1.1] sm:leading-[1.05] mb-6 tracking-tight drop-shadow-lg">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-200">Association of</span><br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-saffron-400 to-saffron-600">Veterinary Doctors</span>
           </h1>
-          <p className="text-lg sm:text-xl text-slate-300 font-light mb-10 leading-relaxed max-w-lg">
+          <p className="text-lg sm:text-xl text-slate-200 font-light mb-10 sm:mb-12 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md">
             A premier professional body representing veterinarians across West Bengal, dedicated to excellence in animal healthcare and professional welfare.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/membership" className="bg-gradient-to-r from-saffron-500 to-saffron-600 text-white px-8 py-3.5 rounded-lg font-bold text-sm shadow-[0_0_20px_rgba(255,153,51,0.3)] hover:shadow-[0_0_25px_rgba(255,153,51,0.4)] hover:from-saffron-400 hover:to-saffron-500 text-center flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5">
-              Become a Member <ArrowRight className="h-4 w-4" />
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center justify-center md:justify-start flex-wrap">
+            <Link to="/membership" className="w-full sm:w-auto bg-gradient-to-r from-saffron-500 to-saffron-600 text-white px-8 py-4 sm:py-3.5 rounded-xl sm:rounded-lg font-bold text-base sm:text-sm shadow-[0_0_20px_rgba(255,153,51,0.3)] hover:shadow-[0_0_25px_rgba(255,153,51,0.4)] hover:from-saffron-400 hover:to-saffron-500 text-center flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5">
+              Become a Member <ArrowRight className="h-5 w-5 sm:h-4 sm:w-4" />
             </Link>
-            <Link to="/about" className="bg-white/5 border border-white/10 text-white px-8 py-3.5 rounded-lg font-bold text-sm hover:bg-white/10 text-center backdrop-blur-md transition-all transform hover:-translate-y-0.5">
+            <a href="https://drive.google.com/file/d/1HasUvMwGKvn1KYCAiAmHDVKJw-KW5-ND/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-white/10 border border-white/20 text-white px-8 py-4 sm:py-3.5 rounded-xl sm:rounded-lg font-bold text-base sm:text-sm hover:bg-white/20 text-center backdrop-blur-md transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+              Download Application
+            </a>
+            <Link to="/about" className="w-full sm:w-auto bg-white/10 border border-white/20 text-white px-8 py-4 sm:py-3.5 rounded-xl sm:rounded-lg font-bold text-base sm:text-sm hover:bg-white/20 text-center backdrop-blur-md transition-all transform hover:-translate-y-0.5">
               About AVD
             </Link>
-          </div>
-        </div>
-
-        <div className="absolute right-0 bottom-0 top-0 w-1/2 hidden lg:flex items-center justify-end pr-12 lg:pr-20 pointer-events-none">
-          <div className="relative w-[500px] h-[360px] xl:w-[600px] xl:h-[420px] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-white/10 transform rotate-2 hover:rotate-0 transition-transform duration-500 pointer-events-auto">
-            <Carousel images={heroPhotos} interval={4000} />
-            <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)] rounded-2xl pointer-events-none"></div>
           </div>
         </div>
       </section>
 
       {/* Premium Overlapping Facts Section */}
-      <section className="relative z-20 max-w-7xl mx-auto -mt-12 mb-16 grid grid-cols-1 md:grid-cols-3 gap-6 px-6 lg:px-8">
+      <section className="relative z-20 max-w-7xl mx-auto md:-mt-12 mb-8 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-6 lg:px-8 mt-4 sm:mt-0">
         <div className="bg-white rounded-2xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col gap-4 transform hover:-translate-y-1 transition-transform duration-300">
           <div className="w-12 h-12 bg-saffron-50 rounded-xl flex items-center justify-center text-saffron-600 ring-1 ring-saffron-100 shadow-inner">
             <Shield className="h-6 w-6" aria-hidden="true" />
@@ -132,6 +126,28 @@ export function Home() {
         </div>
       </section>
 
+      {/* Latest Notice Update */}
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm overflow-hidden relative">
+          <div className="absolute top-0 left-0 w-2 h-full bg-blue-500"></div>
+          <div className="flex-1">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse">Latest Update</span>
+              <span className="text-sm text-blue-800/70 font-medium">May 19, 2026</span>
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 mb-2">Request for Police Protection during Eid al-Adha</h3>
+            <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
+              Request for Police Protection for Veterinary Officers and BLDOs during Eid al-Adha (Bakrid) in compliance with the West Bengal Animal Slaughter Control Act, 1950.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row w-full md:w-auto gap-3 shrink-0">
+            <Link to="/notices" className="text-center font-bold text-sm text-blue-700 bg-white border border-blue-200 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors">
+              Read more
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* About & FAQ Section */}
       <section className="flex-1 px-6 py-12 lg:px-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 bg-white max-w-7xl mx-auto w-full">
         <div className="space-y-6">
@@ -143,12 +159,12 @@ export function Home() {
           <p className="text-base leading-relaxed text-slate-600">
             AVD is a professional association of veterinarians, registered as a society under the West Bengal Societies Registration Act, 1961. We are dedicated to advancing the veterinary profession, advocating for member welfare, and supporting the livestock development of the state through scientific advancement and public policy engagement.
           </p>
-          <div className="pt-6 flex gap-6">
-            <div className="flex flex-col px-6 py-4 bg-slate-50 rounded-xl border border-slate-100 shadow-sm">
-              <span className="text-3xl font-extrabold text-slate-800 mb-1">5,000<span className="text-saffron-500">+</span></span>
+          <div className="pt-6 flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <div className="flex flex-col px-6 py-5 sm:py-4 bg-slate-50 rounded-xl border border-slate-100 shadow-sm w-full sm:w-auto">
+              <span className="text-3xl font-extrabold text-slate-800 mb-1">800<span className="text-saffron-500">+</span></span>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Active Members</span>
             </div>
-            <div className="flex flex-col px-6 py-4 bg-slate-50 rounded-xl border border-slate-100 shadow-sm">
+            <div className="flex flex-col px-6 py-5 sm:py-4 bg-slate-50 rounded-xl border border-slate-100 shadow-sm w-full sm:w-auto">
               <span className="text-3xl font-extrabold text-slate-800 mb-1">23</span>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">District Units</span>
             </div>
@@ -174,7 +190,7 @@ export function Home() {
             <h2 className="text-3xl font-bold text-slate-800 tracking-tight">AVD Moments & Gallery</h2>
             <p className="text-slate-500 max-w-2xl">A glimpse into our state-wide activities, meetings, and veterinary milestones across West Bengal.</p>
           </div>
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
             {allPhotos.map((photo, i) => (
               <div 
                 key={i} 
