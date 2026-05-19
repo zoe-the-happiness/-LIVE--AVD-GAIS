@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Shield, Users, Image as ImageIcon, X } from "lucide-react";
+import { ArrowRight, CheckCircle2, Shield, Users, Image as ImageIcon, X, FileText, Download, Building } from "lucide-react";
 import { FaqAccordion } from "../components/FaqAccordion";
 import { Helmet } from "react-helmet-async";
 import { BackgroundCarousel } from "../components/BackgroundCarousel";
+import { AppointmentsMarquee } from "../components/AppointmentsMarquee";
+import { AppointmentsSection } from "../components/AppointmentsSection";
 import { allPhotos, heroPhotos } from "../data/photos";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -50,11 +52,12 @@ export function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="AVD West Bengal - Association of Veterinary Doctors" />
         <meta property="og:description" content="A premier professional body representing veterinarians across West Bengal." />
-        <meta property="og:image" content="https://ik.imagekit.io/dgevdmg7em/AVD/20260519%20AVD%20Photos%20(8).webp?updatedAt=1779185033992" />
+        <meta property="og:image" content="https://ik.imagekit.io/dgevdmg7em/AVD/20260519%20AVD%20Photos%20(8).webp?tr=f-jpg&updatedAt=1779185033992" />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="AVD West Bengal - Association of Veterinary Doctors" />
         <meta property="twitter:description" content="A premier professional body representing veterinarians across West Bengal." />
-        <meta property="twitter:image" content="https://ik.imagekit.io/dgevdmg7em/AVD/20260519%20AVD%20Photos%20(8).webp?updatedAt=1779185033992" />
+        <meta property="twitter:image" content="https://ik.imagekit.io/dgevdmg7em/AVD/20260519%20AVD%20Photos%20(8).webp?tr=f-jpg&updatedAt=1779185033992" />
         <script type="application/ld+json">
           {JSON.stringify(ldJson)}
         </script>
@@ -62,7 +65,7 @@ export function Home() {
 
       {/* Premium Hero Section */}
       <section className="relative px-5 py-24 sm:py-28 lg:py-36 lg:px-12 flex flex-col md:flex-row items-center justify-center md:justify-start overflow-hidden min-h-[100svh] md:min-h-[85vh]">
-        <BackgroundCarousel images={heroPhotos} interval={10000} />
+        <BackgroundCarousel images={heroPhotos} interval={5600} />
         
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
           <div className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] rounded-full bg-saffron-900/30 blur-[100px] md:blur-[150px] mix-blend-screen"></div>
@@ -72,7 +75,7 @@ export function Home() {
         <div className="relative z-10 max-w-3xl text-white md:pl-8 lg:pl-12 w-full text-center md:text-left">
           <div className="inline-flex items-center gap-2 px-4 py-2 sm:px-3 sm:py-1.5 bg-saffron-500/10 border border-saffron-500/20 rounded-full text-[10px] sm:text-xs font-bold mb-6 sm:mb-8 tracking-widest text-saffron-300 shadow-inner backdrop-blur-sm mx-auto md:mx-0">
              <span className="w-2 h-2 rounded-full bg-saffron-500 animate-pulse"></span>
-             ESTABLISHED 1961
+             REG. NO. 34784
           </div>
           <h1 className="text-4xl sm:text-6xl lg:text-[4.5rem] font-extrabold leading-[1.1] sm:leading-[1.05] mb-6 tracking-tight drop-shadow-lg">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-200">Association of</span><br/>
@@ -126,6 +129,11 @@ export function Home() {
         </div>
       </section>
 
+      {/* Appointments Marquee */}
+      <section className="mb-12">
+        <AppointmentsMarquee />
+      </section>
+
       {/* Latest Notice Update */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-16">
         <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm overflow-hidden relative">
@@ -146,6 +154,11 @@ export function Home() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* Appointments & Transfers Section */}
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-16">
+        <AppointmentsSection />
       </section>
 
       {/* About & FAQ Section */}
