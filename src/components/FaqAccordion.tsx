@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "../lib/utils";
@@ -19,7 +19,7 @@ const faqs: IFaqItem[] = [
   },
   {
     question: "Are there membership fees?",
-    answer: "Yes, there is an annual or lifetime subscription fee depending on the membership category chosen. Student and retired members often qualify for reduced rates. Please check the membership page for current fees.",
+    answer: "Yes, there is an annual or lifetime subscription fee depending on the membership category chosen. Student and retired members often qualify for reduced rates. Please check the membership page for current fees. Contact us for more information.",
   },
   {
     question: "What is the registration number of AVD?",
@@ -41,14 +41,27 @@ export function FaqAccordion() {
 
 const FaqItem: React.FC<{ faq: IFaqItem }> = ({ faq }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const itemRef = useRef<HTMLDivElement>(null);
+
+  const toggleOpen = () => {
+    const nextState = !isOpen;
+    setIsOpen(nextState);
+    if (nextState) {
+      setTimeout(() => {
+        itemRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }, 200);
+    }
+  };
 
   return (
-    <div className={cn(
-      "flex flex-col border rounded-xl transition-all duration-200 group",
-      isOpen ? "bg-slate-50 border-saffron-200 shadow-sm" : "bg-white border-slate-200 hover:border-saffron-200 hover:shadow-sm"
-    )}>
+    <div
+      ref={itemRef}
+      className={cn(
+        "flex flex-col border rounded-xl transition-all duration-200 group",
+        isOpen ? "bg-slate-50 border-saffron-200 shadow-sm" : "bg-white border-slate-200 hover:border-saffron-200 hover:shadow-sm"
+      )}>
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleOpen}
         className="w-full text-left p-4 sm:p-5 flex justify-between items-center cursor-pointer transition-colors"
         aria-expanded={isOpen}
       >
