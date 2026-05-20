@@ -27,7 +27,7 @@ export function BackgroundCarousel({ images, interval = 8000 }: Props) {
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0, scale: 1.0 }}
-          animate={{ opacity: 0.35, scale: 1.05 }}
+          animate={{ opacity: 0.55, scale: 1.05 }}
           exit={{ opacity: 0 }}
           transition={{
             opacity: { duration: 3, ease: "easeInOut" },

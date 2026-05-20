@@ -29,8 +29,8 @@ const faqs: IFaqItem[] = [
 
 export function FaqAccordion() {
   return (
-    <div className="w-full flex flex-col gap-2">
-      <div className="flex flex-col space-y-2">
+    <div className="w-full">
+      <div className="flex flex-col space-y-3">
         {faqs.map((faq, index) => (
           <FaqItem key={index} faq={faq} />
         ))}
@@ -43,25 +43,25 @@ const FaqItem: React.FC<{ faq: IFaqItem }> = ({ faq }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col">
+    <div className={cn(
+      "flex flex-col border rounded-xl transition-all duration-200 group",
+      isOpen ? "bg-slate-50 border-saffron-200 shadow-sm" : "bg-white border-slate-200 hover:border-saffron-200 hover:shadow-sm"
+    )}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={cn(
-          "border rounded-lg p-3 flex justify-between items-center cursor-pointer transition-colors",
-          isOpen ? "bg-slate-50 border-saffron-100" : "bg-white border-slate-200"
-        )}
+        className="w-full text-left p-4 sm:p-5 flex justify-between items-center cursor-pointer transition-colors"
         aria-expanded={isOpen}
       >
         <span className={cn(
-          "text-sm font-semibold text-left",
-          isOpen ? "text-slate-800" : "text-slate-700"
+          "text-base font-semibold transition-colors",
+          isOpen ? "text-slate-900" : "text-slate-700 group-hover:text-slate-900"
         )}>
           {faq.question}
         </span>
         <ChevronDown
           className={cn(
-            "h-4 w-4 transition-transform duration-200", 
-            isOpen ? "text-saffron-600 -rotate-180" : "text-slate-400"
+            "h-5 w-5 shrink-0 transition-transform duration-200", 
+            isOpen ? "text-saffron-600 -rotate-180" : "text-slate-400 group-hover:text-saffron-500"
           )}
           aria-hidden="true"
         />
@@ -75,7 +75,7 @@ const FaqItem: React.FC<{ faq: IFaqItem }> = ({ faq }) => {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <div className="px-4 py-2 text-xs text-slate-500 leading-relaxed">
+            <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 text-sm text-slate-600 leading-relaxed">
               {faq.answer}
             </div>
           </motion.div>
