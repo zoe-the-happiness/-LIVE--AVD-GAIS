@@ -1,31 +1,6 @@
-export function About() {
-  const governingBody = [
-    {
-      name: "Dr. Placeholder Name",
-      role: "President",
-      bio: "A visionary leader with over 30 years of experience in veterinary medicine and public health administration.",
-      image: "https://i.pravatar.cc/300?img=11"
-    },
-    {
-      name: "Dr. Placeholder Name",
-      role: "Vice President",
-      bio: "Dedicated to advancing livestock development and advocating for the welfare of veterinary professionals across the state.",
-      image: "https://i.pravatar.cc/300?img=68"
-    },
-    {
-      name: "Dr. Placeholder Name",
-      role: "General Secretary",
-      bio: "Passionate about organized veterinary practice and strengthening the roots of the association.",
-      image: "https://i.pravatar.cc/300?img=33"
-    },
-    {
-      name: "Dr. Placeholder Name",
-      role: "Treasurer",
-      bio: "Ensuring transparency, accountability, and the financial health of the association to fuel our mission.",
-      image: "https://i.pravatar.cc/300?img=12"
-    }
-  ];
+import { Users, ShieldCheck, HeartPulse, BookOpen, GraduationCap, Globe2, Mic, Quote } from "lucide-react";
 
+export function About() {
   return (
     <div className="py-24 sm:py-32 bg-slate-50 min-h-screen">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -94,37 +69,37 @@ export function About() {
                 <p className="text-slate-600 mb-6 italic pl-4 sm:pl-12">The objectives flow from the mission. Each one builds the same body.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pl-4 sm:pl-12 mt-8">
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-                    <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4">1</div>
+                    <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4"><Users className="w-6 h-6" /></div>
                     <strong className="text-slate-900 block text-lg mb-2">Organize the entire profession</strong>
                     <p className="text-slate-600 text-sm leading-relaxed">Bring every veterinarian in West Bengal, government, private, academic, and retired, onto one common platform of fraternity, shared identity, and coordinated action.</p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-                    <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4">2</div>
+                    <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4"><ShieldCheck className="w-6 h-6" /></div>
                     <strong className="text-slate-900 block text-lg mb-2">Protect dignity and welfare</strong>
                     <p className="text-slate-600 text-sm leading-relaxed">Defend the professional standing, service conditions, legal protection, and economic security of the veterinary doctor, so the profession remains attractive to the finest minds.</p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-                    <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4">3</div>
+                    <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4"><HeartPulse className="w-6 h-6" /></div>
                     <strong className="text-slate-900 block text-lg mb-2">Advance animal health</strong>
                     <p className="text-slate-600 text-sm leading-relaxed">Treat the care of every animal, companion, livestock, and stray, as a service owed to society, not a transaction. Promote the right to a dignified life and a dignified death for animals.</p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-                    <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4">4</div>
+                    <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4"><BookOpen className="w-6 h-6" /></div>
                     <strong className="text-slate-900 block text-lg mb-2">Strengthen foundations</strong>
                     <p className="text-slate-600 text-sm leading-relaxed">Foster continuing education, ethical practice, modern skills, and discipline, so each member is equipped for the challenges of the present day.</p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-                     <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4">5</div>
+                     <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4"><GraduationCap className="w-6 h-6" /></div>
                      <strong className="text-slate-900 block text-lg mb-2">Mould the next generation</strong>
                      <p className="text-slate-600 text-sm leading-relaxed">Instill in veterinary students and young doctors a sense of pride in the profession's heritage, scientific rigour, and intense commitment to animal and public welfare.</p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-                     <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4">6</div>
+                     <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4"><Globe2 className="w-6 h-6" /></div>
                      <strong className="text-slate-900 block text-lg mb-2">Serve the people</strong>
                      <p className="text-slate-600 text-sm leading-relaxed">Recognize that protecting livestock, food safety, and zoonotic disease control directly protects the rural economy and the health of every household in West Bengal.</p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow md:col-span-2 text-center flex flex-col items-center">
-                     <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4">7</div>
+                     <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-4"><Mic className="w-6 h-6" /></div>
                      <strong className="text-slate-900 block text-lg mb-2">Speak as one voice</strong>
                      <p className="text-slate-600 text-sm leading-relaxed max-w-2xl">Be the single, credible, non-political voice of the veterinary profession before government, public, and society, on every matter affecting animals and those who heal them.</p>
                   </div>
@@ -142,25 +117,14 @@ export function About() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {governingBody.map((member, idx) => (
-                <div key={idx} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-lg transition-all hover:-translate-y-1">
-                  <div className="w-full aspect-square overflow-hidden bg-slate-100">
-                    <img 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-500"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
-                    <p className="text-saffron-600 font-semibold mb-4 text-sm uppercase tracking-wider">{member.role}</p>
-                    <p className="text-slate-600 text-sm leading-relaxed line-clamp-4">
-                      {member.bio}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="bg-white rounded-3xl border border-slate-200 p-12 text-center shadow-sm">
+              <div className="w-16 h-16 bg-saffron-100 text-saffron-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">Coming Soon</h3>
+              <p className="text-slate-600 max-w-lg mx-auto leading-relaxed">
+                We are currently updating our governing body member profiles. Please check back soon for more information about the dedicated leadership team guiding the association.
+              </p>
             </div>
           </div>
         </div>

@@ -68,7 +68,7 @@ export function Home() {
 
       {/* Premium Hero Section */}
       <section className="relative px-5 py-24 sm:py-28 lg:py-36 lg:px-12 flex flex-col md:flex-row items-center justify-center md:justify-start overflow-hidden min-h-[100svh] md:min-h-[85vh]">
-        <BackgroundCarousel images={heroPhotos} interval={5600} />
+        <BackgroundCarousel images={heroPhotos} interval={4200} />
         
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
           <div className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] rounded-full bg-saffron-900/30 blur-[100px] md:blur-[150px] mix-blend-screen"></div>

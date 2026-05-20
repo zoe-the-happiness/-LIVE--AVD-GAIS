@@ -15,15 +15,28 @@ export function AppointmentsMarquee() {
   useEffect(() => {
     async function fetchTransfers() {
       try {
-        const response = await fetch("/api/transfers");
-        const data = await response.json();
-        if (data.success && data.data) {
-          // If the backend couldn't find items due to SPA limitations,
-          // we gracefully show what we can, or a warning.
-          setOrders(data.data.slice(0, 4));
+        const response = await fetch("https://ard.wb.gov.in/api/v1/appointments");
+        if (!response.ok) throw new Error("Network response was not ok");
+        const apiData = await response.json();
+        if (apiData && Array.isArray(apiData)) {
+          const formattedOrders = apiData.map((item: any) => ({
+            title: item.title_english,
+            link: item.file_path_english ? `https://ard.wb.gov.in/${item.file_path_english}` : 'https://ard.wb.gov.in',
+            date: new Date(item.created).toLocaleDateString()
+          }));
+          setOrders(formattedOrders.slice(0, 4)); // Show 4 items on Marquee
         }
       } catch (error) {
-        console.error("Failed to fetch transfers", error);
+        console.error("Failed to fetch directly, falling back to proxy", error);
+        try {
+          const response = await fetch("/api/transfers");
+          const data = await response.json();
+          if (data.success && data.data) {
+            setOrders(data.data.slice(0, 4));
+          }
+        } catch (innerError) {
+          console.error("Failed to fetch transfers via proxy", innerError);
+        }
       } finally {
         setLoading(false);
       }
