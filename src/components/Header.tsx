@@ -10,7 +10,6 @@ const navigation = [
   { name: "Membership", href: "/membership" },
   { name: "Districts", href: "/districts" },
   { name: "Notices", href: "/notices" },
-  { name: "Contact", href: "/contact" },
 ];
 
 export function Header() {
