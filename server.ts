@@ -7,8 +7,8 @@ import NodeCache from "node-cache";
 import https from "https";
 import crypto from "crypto";
 
-// Cache for 6 hours
-const cache = new NodeCache({ stdTTL: 6 * 60 * 60 });
+// Cache for 10 hours
+const cache = new NodeCache({ stdTTL: 10 * 60 * 60 });
 
 const httpsAgent = new https.Agent({
   secureOptions: crypto.constants.SSL_OP_LEGACY_SERVER_CONNECT
@@ -52,6 +52,38 @@ async function startServer() {
     } catch (error) {
       console.error("API error:", error);
       res.status(500).json({ success: false, error: "Failed to fetch transfers" });
+    }
+  });
+
+  app.get("/api/orders", async (req, res) => {
+    try {
+      const cachedData = cache.get("orders");
+      if (cachedData) {
+        return res.json(cachedData);
+      }
+
+      // Fetch from the orders API endpoint
+      const response = await axios.get("https://ard.wb.gov.in/api/v1/orders", {
+        httpsAgent,
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+        }
+      });
+      
+      const apiData = response.data || [];
+      const orders = apiData.map((item: any) => ({
+        title: item.title_english,
+        link: item.file_path ? `https://ard.wb.gov.in/${item.file_path}` : 'https://ard.wb.gov.in',
+        date: new Date(item.created).toLocaleDateString()
+      }));
+
+      const result = { success: true, data: orders };
+      cache.set("orders", result);
+      
+      res.json(result);
+    } catch (error) {
+      console.error("API error (orders):", error);
+      res.status(500).json({ success: false, error: "Failed to fetch orders" });
     }
   });
 

@@ -9,55 +9,87 @@ interface TransferOrder {
 }
 
 export function AppointmentsMarquee() {
-  const [orders, setOrders] = useState<TransferOrder[]>([]);
+  const [items, setItems] = useState<TransferOrder[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchTransfers() {
+    async function fetchData() {
       try {
-        const response = await fetch("https://ard.wb.gov.in/api/v1/appointments");
-        if (!response.ok) throw new Error("Network response was not ok");
-        const apiData = await response.json();
-        if (apiData && Array.isArray(apiData)) {
-          const formattedOrders = apiData.map((item: any) => ({
-            title: item.title_english,
-            link: item.file_path_english ? `https://ard.wb.gov.in/${item.file_path_english}` : 'https://ard.wb.gov.in',
-            date: new Date(item.created).toLocaleDateString()
-          }));
-          setOrders(formattedOrders.slice(0, 4)); // Show 4 items on Marquee
-        }
-      } catch (error) {
-        console.error("Failed to fetch directly, falling back to proxy", error);
+        let transfersData: TransferOrder[] = [];
+        let ordersData: TransferOrder[] = [];
+
+        // Fetch Transfers
         try {
-          const response = await fetch("/api/transfers");
-          const data = await response.json();
-          if (data.success && data.data) {
-            setOrders(data.data.slice(0, 4));
-          }
-        } catch (innerError) {
-          console.error("Failed to fetch transfers via proxy", innerError);
+          const resT = await fetch("https://ard.wb.gov.in/api/v1/appointments");
+          if (resT.ok) {
+            const apiData = await resT.json();
+            if (apiData && Array.isArray(apiData)) {
+              transfersData = apiData.map((item: any) => ({
+                title: item.title_english,
+                link: item.file_path_english ? `https://ard.wb.gov.in/${item.file_path_english}` : 'https://ard.wb.gov.in',
+                date: new Date(item.created).toLocaleDateString(),
+                timestamp: new Date(item.created).getTime()
+              }));
+            }
+          } else { throw new Error('API failed'); }
+        } catch (e) {
+          try {
+            const resTProxy = await fetch("/api/transfers");
+            const dataT = await resTProxy.json();
+            if (dataT.success && dataT.data) {
+              transfersData = dataT.data.map((o: any) => ({ ...o, timestamp: new Date(o.date).getTime() }));
+            }
+          } catch (inner) { console.error("Transfers fetch error", inner); }
         }
+
+        // Fetch Orders
+        try {
+          const resO = await fetch("https://ard.wb.gov.in/api/v1/orders");
+          if (resO.ok) {
+            const apiData = await resO.json();
+            if (apiData && Array.isArray(apiData)) {
+              ordersData = apiData.map((item: any) => ({
+                title: item.title_english,
+                link: item.file_path ? `https://ard.wb.gov.in/${item.file_path}` : 'https://ard.wb.gov.in',
+                date: new Date(item.created).toLocaleDateString(),
+                timestamp: new Date(item.created).getTime()
+              }));
+            }
+          } else { throw new Error('API failed'); }
+        } catch (e) {
+          try {
+            const resOProxy = await fetch("/api/orders");
+            const dataO = await resOProxy.json();
+            if (dataO.success && dataO.data) {
+              ordersData = dataO.data.map((o: any) => ({ ...o, timestamp: new Date(o.date).getTime() }));
+            }
+          } catch (inner) { console.error("Orders fetch error", inner); }
+        }
+
+        const combined = [...transfersData, ...ordersData].sort((a: any, b: any) => b.timestamp - a.timestamp);
+        setItems(combined.slice(0, 6));
+
       } finally {
         setLoading(false);
       }
     }
     
-    fetchTransfers();
+    fetchData();
   }, []);
 
   if (loading) {
     return (
       <div className="w-full bg-slate-900 py-2 border-y border-slate-800 text-slate-400 text-xs px-4">
-        Syncing live appointment data...
+        Syncing live data...
       </div>
     );
   }
 
-  if (orders.length === 0) {
+  if (items.length === 0) {
      return (
       <div className="w-full bg-slate-900 py-2 border-y border-slate-800 text-slate-400 text-xs px-4 flex items-center justify-center gap-2">
         <AlertCircle className="w-4 h-4 text-saffron-500" />
-        No recent appointments or transfers found at this time.
+        No recent orders, appointments or transfers found at this time.
       </div>
      )
   }
@@ -77,12 +109,12 @@ export function AppointmentsMarquee() {
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 30,
+              duration: 40,
               ease: "linear",
             },
           }}
         >
-          {orders.map((order, i) => (
+          {items.map((order, i) => (
             <div key={i} className="flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-saffron-500"></span>
               <a 
@@ -90,14 +122,14 @@ export function AppointmentsMarquee() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors"
-                title="Download Order Document"
+                title="Download Document"
               >
                 {order.title} <span className="text-slate-500 ml-2">({order.date})</span>
               </a>
             </div>
           ))}
           {/* Duplicate for infinite seamless scroll */}
-          {orders.map((order, i) => (
+          {items.map((order, i) => (
             <div key={`dup-${i}`} className="flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-saffron-500"></span>
               <a 
@@ -105,7 +137,7 @@ export function AppointmentsMarquee() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors"
-                title="Download Order Document"
+                title="Download Document"
               >
                 {order.title} <span className="text-slate-500 ml-2">({order.date})</span>
               </a>

@@ -12,12 +12,16 @@ export function Contact() {
             <div className="space-y-4 text-gray-600 border-l-2 border-blue-600 pl-4">
               <p>
                 <strong>Address:</strong><br />
-                Association of Veterinary Doctors<br />
-                Kolkata, West Bengal
+                F-1, Tribeni Complex, 36A Sahitya Parishad Street,<br />
+                Kolkata - 700006
               </p>
               <p>
                 <strong>Email:</strong><br />
                 <a href="mailto:contact@avdwb.com" className="text-blue-600 hover:underline">contact@avdwb.com</a>
+              </p>
+              <p>
+                <strong>Website:</strong><br />
+                <a href="https://www.avdwb.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.avdwb.com</a>
               </p>
             </div>
           </div>

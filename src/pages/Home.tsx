@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet-async";
 import { BackgroundCarousel } from "../components/BackgroundCarousel";
 import { AppointmentsMarquee } from "../components/AppointmentsMarquee";
 import { AppointmentsSection } from "../components/AppointmentsSection";
+import { OrdersSection } from "../components/OrdersSection";
 import { allPhotos, heroPhotos } from "../data/photos";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -137,13 +138,17 @@ export function Home() {
         <AppointmentsMarquee />
       </section>
 
-      {/* Latest Notice Update */}
+      {/* Latest Notice Update (AVD - Activities) */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="inline-flex items-center gap-2 mb-4 px-2">
+          <span className="w-6 h-[2px] bg-blue-500"></span>
+          <h4 className="text-sm font-bold text-slate-700 uppercase tracking-widest">AVD - Activities</h4>
+        </div>
         <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm overflow-hidden relative">
           <div className="absolute top-0 left-0 w-2 h-full bg-blue-500"></div>
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse">Latest Update</span>
+              <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse">Latest Notice</span>
               <span className="text-sm text-blue-800/70 font-medium">May 19, 2026</span>
             </div>
             <h3 className="text-lg font-bold text-slate-900 mb-2">Request for Police Protection during Eid al-Adha</h3>
@@ -159,73 +164,92 @@ export function Home() {
         </div>
       </section>
 
-      {/* Appointments & Transfers Section */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-16">
-        <AppointmentsSection />
-      </section>
-
-      {/* About & FAQ Section */}
-      <section className="flex-1 px-6 py-12 lg:px-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 bg-white max-w-7xl mx-auto w-full">
-        <div className="space-y-6">
-          <div className="inline-flex items-center gap-2">
-            <span className="w-8 h-[2px] bg-saffron-500"></span>
-            <h4 className="text-xs font-bold text-saffron-600 uppercase tracking-widest">About the Association</h4>
-          </div>
-          <h2 className="text-3xl font-bold text-slate-800 tracking-tight">Driving Excellence in Veterinary Science</h2>
-          <p className="text-base leading-relaxed text-slate-600">
-            AVD is a professional association of veterinarians, registered as a society under the West Bengal Societies Registration Act, 1961. We are dedicated to advancing the veterinary profession, advocating for member welfare, and supporting the livestock development of the state through scientific advancement and public policy engagement.
-          </p>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-6">
-            <div className="relative group bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(255,153,51,0.15)] rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 ring-1 ring-black/5">
-               <div className="absolute -top-4 -right-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity rotate-12 scale-150">
-                 <Eye className="w-24 h-24 text-saffron-600" />
-               </div>
-               <div className="w-12 h-12 bg-gradient-to-br from-saffron-500 to-saffron-600 rounded-xl flex items-center justify-center text-white mb-5 shadow-lg shadow-saffron-500/30">
-                 <Eye className="w-6 h-6" />
-               </div>
-               <h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-widest mb-3">Vision</h3>
-               <p className="text-sm text-slate-600 leading-relaxed relative z-10 font-medium">To carry the veterinary profession of West Bengal to the pinnacle of its dignity, strength, and service.</p>
+      {/* About AVD Section (Vibrant & Lively) */}
+      <section className="relative overflow-hidden w-full bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 py-20 lg:py-28 mb-16 shadow-[0px_-20px_40px_rgb(0,0,0,0.05)] border-y border-indigo-800/30">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 right-0 w-full h-full bg-[url('https://ik.imagekit.io/dgevdmg7em/AVD/20260519%20AVD%20Photos%20(8).webp?tr=f-jpg,w-1200,h-630,c-at_max,q-80')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
+          <div className="absolute -top-1/2 -right-1/4 w-96 h-96 bg-saffron-500/20 rounded-full blur-[100px] mix-blend-screen"></div>
+          <div className="absolute -bottom-1/2 -left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] mix-blend-screen"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center">
+          <div className="space-y-8 w-full max-w-5xl text-center">
+            <div className="inline-flex items-center gap-2 justify-center mx-auto">
+              <span className="w-8 h-[2px] bg-saffron-400"></span>
+              <h4 className="text-xs font-bold text-saffron-400 uppercase tracking-widest drop-shadow-md">About the Association</h4>
+              <span className="w-8 h-[2px] bg-saffron-400"></span>
             </div>
-            <div className="relative group bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(37,99,235,0.15)] rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 ring-1 ring-black/5">
-               <div className="absolute -top-4 -right-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity -rotate-12 scale-150">
-                 <Compass className="w-24 h-24 text-blue-600" />
-               </div>
-               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-5 shadow-lg shadow-blue-500/30">
-                 <Compass className="w-6 h-6" />
-               </div>
-               <h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-widest mb-3">Mission</h3>
-               <p className="text-sm text-slate-600 leading-relaxed relative z-10 font-medium">Protecting both animal and human well-being through professional discipline, vigilance, and unity.</p>
-            </div>
-            <div className="relative group bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(16,185,129,0.15)] rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 ring-1 ring-black/5">
-               <div className="absolute -top-4 -right-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity rotate-12 scale-150">
-                 <Target className="w-24 h-24 text-emerald-600" />
-               </div>
-               <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center text-white mb-5 shadow-lg shadow-emerald-500/30">
-                 <Target className="w-6 h-6" />
-               </div>
-               <h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-widest mb-3">Objectives</h3>
-               <p className="text-sm text-slate-600 leading-relaxed relative z-10 font-medium">Organize the entire profession, protect member welfare, and advance animal health as a public duty.</p>
-            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight pt-2 drop-shadow-lg">
+              Driving Excellence in <span className="text-transparent bg-clip-text bg-gradient-to-r from-saffron-400 to-saffron-500">Veterinary Science</span>
+            </h2>
+            <p className="text-lg md:text-xl leading-relaxed text-indigo-100 max-w-4xl mx-auto font-light drop-shadow">
+              AVD is a professional association of veterinarians, registered as a society under the West Bengal Societies Registration Act, 1961. We are dedicated to advancing the veterinary profession, advocating for member welfare, and supporting the livestock development of the state through scientific advancement and public policy engagement.
+            </p>
           </div>
           
-          <div className="pt-6 flex flex-col sm:flex-row gap-4 sm:gap-6">
-            <div className="flex flex-col px-6 py-5 sm:py-4 bg-slate-50 rounded-xl border border-slate-100 shadow-sm w-full sm:w-auto">
-              <span className="text-3xl font-extrabold text-slate-800 mb-1">800<span className="text-saffron-500">+</span></span>
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Active Members</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-16 w-full max-w-6xl">
+            {/* Vision Card */}
+            <div className="relative group bg-white/10 backdrop-blur-xl border border-white/15 shadow-xl hover:shadow-[0_8px_40px_rgba(255,153,51,0.25)] hover:bg-white/20 rounded-3xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 ring-1 ring-white/10">
+               <div className="absolute -top-4 -right-4 p-4 opacity-[0.03] group-hover:opacity-10 transition-opacity rotate-12 scale-150">
+                 <Eye className="w-32 h-32 text-saffron-400" />
+               </div>
+               <div className="w-14 h-14 bg-gradient-to-br from-saffron-400 to-saffron-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-saffron-500/40 transform group-hover:rotate-12 transition-transform">
+                 <Eye className="w-7 h-7" />
+               </div>
+               <h3 className="text-base font-extrabold text-white uppercase tracking-widest mb-3 drop-shadow-sm">Vision</h3>
+               <p className="text-base text-indigo-100 leading-relaxed font-medium">To carry the veterinary profession of West Bengal to the pinnacle of its dignity, strength, and service.</p>
             </div>
-            <div className="flex flex-col px-6 py-5 sm:py-4 bg-slate-50 rounded-xl border border-slate-100 shadow-sm w-full sm:w-auto">
-              <span className="text-3xl font-extrabold text-slate-800 mb-1">23</span>
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">District Units</span>
+            {/* Mission Card */}
+            <div className="relative group bg-white/10 backdrop-blur-xl border border-white/15 shadow-xl hover:shadow-[0_8px_40px_rgba(37,99,235,0.25)] hover:bg-white/20 rounded-3xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 ring-1 ring-white/10">
+               <div className="absolute -top-4 -right-4 p-4 opacity-[0.03] group-hover:opacity-10 transition-opacity -rotate-12 scale-150">
+                 <Compass className="w-32 h-32 text-blue-400" />
+               </div>
+               <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-blue-500/40 transform group-hover:-rotate-12 transition-transform">
+                 <Compass className="w-7 h-7" />
+               </div>
+               <h3 className="text-base font-extrabold text-white uppercase tracking-widest mb-3 drop-shadow-sm">Mission</h3>
+               <p className="text-base text-indigo-100 leading-relaxed font-medium">Protecting both animal and human well-being through professional discipline, vigilance, and unity.</p>
+            </div>
+            {/* Objectives Card */}
+            <div className="relative group bg-white/10 backdrop-blur-xl border border-white/15 shadow-xl hover:shadow-[0_8px_40px_rgba(16,185,129,0.25)] hover:bg-white/20 rounded-3xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 ring-1 ring-white/10">
+               <div className="absolute -top-4 -right-4 p-4 opacity-[0.03] group-hover:opacity-10 transition-opacity rotate-12 scale-150">
+                 <Target className="w-32 h-32 text-emerald-400" />
+               </div>
+               <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-emerald-500/40 transform group-hover:rotate-12 transition-transform">
+                 <Target className="w-7 h-7" />
+               </div>
+               <h3 className="text-base font-extrabold text-white uppercase tracking-widest mb-3 drop-shadow-sm">Objectives</h3>
+               <p className="text-base text-indigo-100 leading-relaxed font-medium">Organize the entire profession, protect member welfare, and advance animal health as a public duty.</p>
+            </div>
+          </div>
+          
+          <div className="pt-16 pb-4 flex flex-col sm:flex-row gap-6 w-full max-w-3xl mx-auto">
+            <div className="flex-1 flex flex-col items-center text-center px-6 py-6 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 shadow-lg">
+              <span className="text-4xl font-black text-white mb-1 drop-shadow-md">800<span className="text-saffron-400">+</span></span>
+              <span className="text-xs font-bold text-saffron-300 uppercase tracking-widest drop-shadow-sm">Active Members</span>
+            </div>
+            <div className="flex-1 flex flex-col items-center text-center px-6 py-6 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 shadow-lg">
+              <span className="text-4xl font-black text-white mb-1 drop-shadow-md">23</span>
+              <span className="text-xs font-bold text-saffron-300 uppercase tracking-widest drop-shadow-sm">District Units</span>
             </div>
           </div>
         </div>
-        <div className="space-y-6">
-          <div className="inline-flex items-center gap-2">
+      </section>
+
+      {/* Appointments & Transfers Section */}
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-16">
+        <AppointmentsSection />
+        <OrdersSection />
+      </section>
+      
+      {/* FAQ Section */}
+      <section className="bg-slate-50 py-16 px-6 lg:px-12 w-full">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 mb-6 justify-center w-full">
             <span className="w-8 h-[2px] bg-saffron-500"></span>
             <h4 className="text-xs font-bold text-saffron-600 uppercase tracking-widest">Help & Support</h4>
+            <span className="w-8 h-[2px] bg-saffron-500"></span>
           </div>
-          <h2 className="text-3xl font-bold text-slate-800 tracking-tight mb-2">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-slate-800 tracking-tight mb-8 text-center">Frequently Asked Questions</h2>
           <FaqAccordion />
         </div>
       </section>

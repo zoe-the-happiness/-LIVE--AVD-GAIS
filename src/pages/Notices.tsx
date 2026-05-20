@@ -7,14 +7,6 @@ export function Notices() {
       title: "Request for Police Protection during Eid al-Adha",
       description: "Request for Police Protection for Veterinary Officers and BLDOs during Eid al-Adha (Bakrid) in compliance with the West Bengal Animal Slaughter Control Act, 1950.",
       link: "https://drive.google.com/file/d/1FT0OBTQ0XZLfKzXq-by6W0z1lkNk9h1K/view?usp=drive_link"
-    },
-    {
-      id: 2,
-      date: "May 15, 2026",
-      type: "Update",
-      title: "Annual General Meeting Announcement",
-      description: "Details regarding the upcoming annual general meeting for all registered members...",
-      link: "#"
     }
   ];
 
