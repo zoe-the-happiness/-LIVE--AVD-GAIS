@@ -5,6 +5,8 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { useEffect } from "react";
+import Lenis from "lenis";
 import Layout from "./components/Layout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Home } from "./pages/Home";
@@ -17,6 +19,18 @@ import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
 
 export default function App() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <HelmetProvider>
       <BrowserRouter>

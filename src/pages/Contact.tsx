@@ -17,7 +17,7 @@ export function Contact() {
               </p>
               <p>
                 <strong>Email:</strong><br />
-                <a href="mailto:info@avdwb.org" className="text-blue-600 hover:underline">info@avdwb.org</a>
+                <a href="mailto:contact@avdwb.com" className="text-blue-600 hover:underline">contact@avdwb.com</a>
               </p>
             </div>
           </div>

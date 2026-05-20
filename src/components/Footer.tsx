@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
+import { Mail, MapPin, ArrowRight } from "lucide-react";
 
 export function Footer() {
   return (
@@ -10,7 +10,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 relative z-10">
         <div className="flex flex-col gap-5">
           <div className="flex items-center gap-3">
-            <img src="https://ik.imagekit.io/dgevdmg7em/AVD/20260517%20Logo_AVD_trans.webp" alt="AVD Logo" className="w-12 h-12 object-contain brightness-0 invert" />
+            <img src="https://ik.imagekit.io/avdwb/Logo/20260517%20Logo_AVD_trans.webp" alt="AVD Logo" className="w-12 h-12 object-contain brightness-0 invert" />
             <div className="flex flex-col">
               <span className="font-bold text-white text-lg leading-tight tracking-tight">AVD West Bengal</span>
             </div>
@@ -43,11 +43,7 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-saffron-500 shrink-0" />
-              <a href="mailto:info@avdwb.org" className="text-slate-400 hover:text-white transition-colors">info@avdwb.org</a>
-            </li>
-            <li className="flex items-center gap-3">
-              <Phone className="w-5 h-5 text-saffron-500 shrink-0" />
-              <a href="tel:+910000000000" className="text-slate-400 hover:text-white transition-colors">+91 000 000 0000</a>
+              <a href="mailto:contact@avdwb.com" className="text-slate-400 hover:text-white transition-colors">contact@avdwb.com</a>
             </li>
           </ul>
         </div>

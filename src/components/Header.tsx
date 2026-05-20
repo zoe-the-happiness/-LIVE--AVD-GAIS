@@ -23,7 +23,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-3">
             <span className="sr-only">Association of Veterinary Doctors</span>
-            <img src="https://ik.imagekit.io/dgevdmg7em/AVD/20260517%20Logo_AVD_trans.webp" alt="AVD Logo" className="w-12 h-12 object-contain" />
+            <img src="https://ik.imagekit.io/avdwb/Logo/20260517%20Logo_AVD_trans.webp" alt="AVD Logo" className="w-12 h-12 object-contain" />
             <div className="flex-col hidden sm:flex">
               <span className="font-bold text-slate-800 leading-tight">AVD West Bengal</span>
               <span className="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Association of Veterinary Doctors</span>
@@ -76,7 +76,7 @@ export function Header() {
           >
             <div className="flex items-center justify-between">
               <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
-                <img src="https://ik.imagekit.io/dgevdmg7em/AVD/20260517%20Logo_AVD_trans.webp" alt="AVD Logo" className="w-10 h-10 object-contain" />
+                <img src="https://ik.imagekit.io/avdwb/Logo/20260517%20Logo_AVD_trans.webp" alt="AVD Logo" className="w-10 h-10 object-contain" />
                 <div className="flex-col flex">
                   <span className="font-bold text-slate-800 leading-tight">AVD West Bengal</span>
                   <span className="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Association of Veterinary</span>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Shield, Users, Image as ImageIcon, X, FileText, Download, Building } from "lucide-react";
+import { ArrowRight, CheckCircle2, Shield, Users, Image as ImageIcon, X, FileText, Download, Building, Eye, Compass, Target } from "lucide-react";
 import { FaqAccordion } from "../components/FaqAccordion";
 import { Helmet } from "react-helmet-async";
 import { BackgroundCarousel } from "../components/BackgroundCarousel";
@@ -176,18 +176,36 @@ export function Home() {
             AVD is a professional association of veterinarians, registered as a society under the West Bengal Societies Registration Act, 1961. We are dedicated to advancing the veterinary profession, advocating for member welfare, and supporting the livestock development of the state through scientific advancement and public policy engagement.
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-            <div className="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:border-saffron-200 transition-colors">
-               <h3 className="text-sm font-bold text-saffron-600 uppercase tracking-widest mb-2 border-b border-saffron-100 pb-2">Vision</h3>
-               <p className="text-xs text-slate-600 leading-relaxed text-justify line-clamp-6">To carry the veterinary profession of West Bengal to the pinnacle of its dignity, strength, and service, so that no power can cast an evil eye on the welfare of its animals or the standing of its doctors.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-6">
+            <div className="relative group bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(255,153,51,0.15)] rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 ring-1 ring-black/5">
+               <div className="absolute -top-4 -right-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity rotate-12 scale-150">
+                 <Eye className="w-24 h-24 text-saffron-600" />
+               </div>
+               <div className="w-12 h-12 bg-gradient-to-br from-saffron-500 to-saffron-600 rounded-xl flex items-center justify-center text-white mb-5 shadow-lg shadow-saffron-500/30">
+                 <Eye className="w-6 h-6" />
+               </div>
+               <h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-widest mb-3">Vision</h3>
+               <p className="text-sm text-slate-600 leading-relaxed relative z-10 font-medium">To carry the veterinary profession of West Bengal to the pinnacle of its dignity, strength, and service.</p>
             </div>
-            <div className="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:border-blue-200 transition-colors">
-               <h3 className="text-sm font-bold text-blue-600 uppercase tracking-widest mb-2 border-b border-blue-100 pb-2">Mission</h3>
-               <p className="text-xs text-slate-600 leading-relaxed text-justify line-clamp-6">The well-being of animals and the well-being of the people who depend on them are one single life-breath. They cannot be separated. AVD exists to protect both through discipline, vigilance, and unity.</p>
+            <div className="relative group bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(37,99,235,0.15)] rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 ring-1 ring-black/5">
+               <div className="absolute -top-4 -right-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity -rotate-12 scale-150">
+                 <Compass className="w-24 h-24 text-blue-600" />
+               </div>
+               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-5 shadow-lg shadow-blue-500/30">
+                 <Compass className="w-6 h-6" />
+               </div>
+               <h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-widest mb-3">Mission</h3>
+               <p className="text-sm text-slate-600 leading-relaxed relative z-10 font-medium">Protecting both animal and human well-being through professional discipline, vigilance, and unity.</p>
             </div>
-            <div className="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:border-emerald-200 transition-colors">
-               <h3 className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-2 border-b border-emerald-100 pb-2">Objectives</h3>
-               <p className="text-xs text-slate-600 leading-relaxed text-justify line-clamp-6">Organize the entire profession. Protect the dignity and welfare of the veterinarian. Advance animal health and welfare as a public duty. Strengthen the foundations of the profession.</p>
+            <div className="relative group bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(16,185,129,0.15)] rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 ring-1 ring-black/5">
+               <div className="absolute -top-4 -right-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity rotate-12 scale-150">
+                 <Target className="w-24 h-24 text-emerald-600" />
+               </div>
+               <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center text-white mb-5 shadow-lg shadow-emerald-500/30">
+                 <Target className="w-6 h-6" />
+               </div>
+               <h3 className="text-sm font-extrabold text-slate-800 uppercase tracking-widest mb-3">Objectives</h3>
+               <p className="text-sm text-slate-600 leading-relaxed relative z-10 font-medium">Organize the entire profession, protect member welfare, and advance animal health as a public duty.</p>
             </div>
           </div>
           
