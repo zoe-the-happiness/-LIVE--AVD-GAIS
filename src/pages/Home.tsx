@@ -8,6 +8,7 @@ import { AppointmentsMarquee } from "../components/AppointmentsMarquee";
 import { AppointmentsSection } from "../components/AppointmentsSection";
 import { OrdersSection } from "../components/OrdersSection";
 import { allPhotos, heroPhotos } from "../data/photos";
+import { noticesData } from "../data/notices";
 import { AnimatePresence, motion } from "motion/react";
 
 export function Home() {
@@ -142,25 +143,36 @@ export function Home() {
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-16">
         <div className="inline-flex items-center gap-2 mb-4 px-2">
           <span className="w-6 h-[2px] bg-blue-500"></span>
-          <h4 className="text-sm font-bold text-slate-700 uppercase tracking-widest">AVD - Activities</h4>
+          <h4 className="text-sm font-bold text-slate-700 uppercase tracking-widest">AVD - Activities & Notices</h4>
         </div>
-        <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm overflow-hidden relative">
-          <div className="absolute top-0 left-0 w-2 h-full bg-blue-500"></div>
-          <div className="flex-1">
-            <div className="flex items-center gap-3 mb-2">
-              <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse">Latest Notice</span>
-              <span className="text-sm text-blue-800/70 font-medium">May 19, 2026</span>
+        <div className="flex flex-col gap-4">
+          {noticesData.slice(0, 3).map((notice, index) => (
+            <div key={notice.id} className="bg-blue-50 border border-blue-100 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm overflow-hidden relative">
+              <div className="absolute top-0 left-0 w-2 h-full bg-blue-500"></div>
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-2">
+                  {index === 0 && <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse">Latest Notice</span>}
+                  <span className="text-sm text-blue-800/70 font-medium">{notice.date}</span>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{notice.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
+                  {notice.description}
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row w-full md:w-auto gap-3 shrink-0">
+                {notice.link !== "#" && (
+                  <a href={notice.link} target="_blank" rel="noopener noreferrer" className="text-center font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors">
+                    View
+                  </a>
+                )}
+              </div>
             </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Request for Police Protection during Eid al-Adha</h3>
-            <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
-              Request for Police Protection for Veterinary Officers and BLDOs during Eid al-Adha (Bakrid) in compliance with the West Bengal Animal Slaughter Control Act, 1950.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row w-full md:w-auto gap-3 shrink-0">
-            <Link to="/notices" className="text-center font-bold text-sm text-blue-700 bg-white border border-blue-200 hover:bg-blue-50 px-6 py-3 rounded-lg transition-colors">
-              Read more
+          ))}
+        </div>
+        <div className="mt-6 flex justify-center">
+            <Link to="/notices" className="text-center font-bold text-sm text-blue-700 bg-white border border-blue-200 hover:bg-blue-50 px-8 py-3 rounded-lg transition-colors">
+              View All Notices
             </Link>
-          </div>
         </div>
       </section>
 

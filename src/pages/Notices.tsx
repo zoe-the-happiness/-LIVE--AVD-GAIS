@@ -1,14 +1,7 @@
+import { noticesData } from "../data/notices";
+
 export function Notices() {
-  const notices = [
-    {
-      id: 1,
-      date: "May 19, 2026",
-      type: "Official",
-      title: "Request for Police Protection during Eid al-Adha",
-      description: "Request for Police Protection for Veterinary Officers and BLDOs during Eid al-Adha (Bakrid) in compliance with the West Bengal Animal Slaughter Control Act, 1950.",
-      link: "https://drive.google.com/file/d/1FT0OBTQ0XZLfKzXq-by6W0z1lkNk9h1K/view?usp=drive_link"
-    }
-  ];
+  const notices = noticesData;
 
   return (
     <div className="py-24 sm:py-32 bg-slate-50 min-h-screen">
