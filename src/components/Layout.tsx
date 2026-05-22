@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { PwaInstallPrompt } from "./PwaInstallPrompt";
+import { NotificationPrompt } from "./NotificationPrompt";
 
 export default function Layout() {
   return (
@@ -12,6 +13,7 @@ export default function Layout() {
       </main>
       <Footer />
       <PwaInstallPrompt />
+      <NotificationPrompt />
     </div>
   );
 }
