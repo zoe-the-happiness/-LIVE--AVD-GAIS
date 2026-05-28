@@ -75,7 +75,7 @@ export function Footer() {
           <Link to="/terms" className="hover:text-saffron-400 transition-colors py-2 sm:py-0">Terms of Service</Link>
           <div className="flex items-center gap-2 py-2 sm:py-0">
             <span className="w-2 h-2 rounded-full bg-saffron-500 animate-pulse shadow-[0_0_8px_rgba(255,153,51,0.5)]"></span>
-            <span className="font-medium tracking-wide">Portal v2.1</span>
+            <span className="font-medium tracking-wide">Portal v2.2</span>
           </div>
         </div>
       </div>
