@@ -16,6 +16,12 @@ export function Notices() {
               <div className="flex items-center gap-4 mb-2 text-sm text-slate-500">
                 <time>{notice.date}</time>
                 <span className="bg-saffron-100 text-saffron-700 px-2.5 py-0.5 rounded-full font-bold text-[10px] tracking-wider uppercase">{notice.type}</span>
+                {notice.isNew && (
+                  <span className="bg-red-500 text-white px-2.5 py-0.5 rounded-full font-bold text-[10px] tracking-wider uppercase animate-pulse flex items-center gap-1">
+                    <span className="w-1 h-1 rounded-full bg-white"></span>
+                    New
+                  </span>
+                )}
               </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">{notice.title}</h3>
               <p className="text-slate-600 text-sm mb-4 leading-relaxed">{notice.description}</p>

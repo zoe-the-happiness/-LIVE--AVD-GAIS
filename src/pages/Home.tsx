@@ -151,7 +151,11 @@ export function Home() {
               <div className="absolute top-0 left-0 w-2 h-full bg-blue-500"></div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
-                  {index === 0 && <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse">Latest Notice</span>}
+                  {index === 0 ? (
+                    <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse">
+                      Latest Notice
+                    </span>
+                  ) : null}
                   <span className="text-sm text-blue-800/70 font-medium">{notice.date}</span>
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{notice.title}</h3>

@@ -1,5 +1,14 @@
 export const noticesData = [
   {
+    id: 3,
+    date: "June 1, 2026",
+    type: "Official",
+    title: "Letter regarding urgent intervention regarding engagement of Veterinary Officers and Animal Health Staff in extra-departmental duties",
+    description: "Letter to competent authority requesting Urgent intervention regarding engagement of Veterinary Officers and Animal Health Staff in extra-departmental duties causing closure of Animal Health Institutions and disruption of essential veterinary services",
+    link: "https://drive.google.com/file/d/1h7FPkdsGRZlVsqycOQDAA3bATPLtb36X/view?usp=sharing",
+    isNew: true,
+  },
+  {
     id: 2,
     date: "May 22, 2026",
     type: "Official",
