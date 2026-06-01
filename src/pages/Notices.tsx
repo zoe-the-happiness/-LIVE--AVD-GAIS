@@ -19,7 +19,7 @@ export function Notices() {
                 {notice.isNew && (
                   <span className="bg-red-500 text-white px-2.5 py-0.5 rounded-full font-bold text-[10px] tracking-wider uppercase animate-pulse flex items-center gap-1">
                     <span className="w-1 h-1 rounded-full bg-white"></span>
-                    New
+                    Latest
                   </span>
                 )}
               </div>
