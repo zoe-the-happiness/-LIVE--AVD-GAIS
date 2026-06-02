@@ -1,10 +1,15 @@
 export const allPhotos = [
-  "https://ik.imagekit.io/avdwb/pic2.webp",
-  "https://ik.imagekit.io/avdwb/ttgl9lzpzlokfotpx4kd.webp?updatedAt=1779211452815",
+  "https://ik.imagekit.io/avdwb/pic2.webp?updatedAt=1780031443112",
+  "https://ik.imagekit.io/avdwb/20260601.webp",
+  "https://ik.imagekit.io/avdwb/20260601%20u%20dinaj.webp",
+  "https://ik.imagekit.io/avdwb/pic2.webp?updatedAt=1780031443112",
   "https://ik.imagekit.io/avdwb/20260519%20AVD%20Photos%20(4).webp",
   "https://ik.imagekit.io/avdwb/20260519%20AVD%20Photos%20(1).webp",
+  "https://ik.imagekit.io/avdwb/pic2.webp?updatedAt=1780031443112",
   "https://ik.imagekit.io/avdwb/20260519%20AVD%20Photos%20(2).webp",
   "https://ik.imagekit.io/avdwb/20260519%20AVD%20Photos%20(12).webp",
+  "https://ik.imagekit.io/avdwb/ttgl9lzpzlokfotpx4kd.webp?updatedAt=1779211452815",
+  "https://ik.imagekit.io/avdwb/pic2.webp?updatedAt=1780031443112",
   "https://ik.imagekit.io/avdwb/20260519%20AVD%20Photos%20(3).webp",
   "https://ik.imagekit.io/avdwb/20260519%20AVD%20Photos%20(7).webp",
   "https://ik.imagekit.io/avdwb/20260519%20AVD%20Photos%20(14).webp",
@@ -20,5 +25,4 @@ export const allPhotos = [
   "https://ik.imagekit.io/avdwb/20260519%20AVD%20Photos%20(6).webp"
 ];
 
-export const heroPhotos = allPhotos.slice(0, 8);
-
+export const heroPhotos = [...allPhotos];

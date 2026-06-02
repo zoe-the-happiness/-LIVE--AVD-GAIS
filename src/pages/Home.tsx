@@ -281,7 +281,7 @@ export function Home() {
             <p className="text-slate-500 max-w-2xl">A glimpse into our state-wide activities, meetings, and veterinary milestones across West Bengal.</p>
           </div>
           <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-            {allPhotos.map((photo, i) => (
+            {allPhotos.slice(0, 12).map((photo, i) => (
               <div 
                 key={i} 
                 onClick={() => setSelectedImage(photo)}
@@ -300,6 +300,15 @@ export function Home() {
                 </div>
               </div>
             ))}
+          </div>
+          
+          <div className="mt-10 flex justify-center">
+            <Link 
+              to="/gallery" 
+              className="inline-flex items-center gap-2 font-bold text-sm text-saffron-600 bg-white border border-saffron-200 hover:bg-saffron-50 hover:text-saffron-700 px-8 py-3.5 rounded-full transition-all shadow-sm hover:shadow"
+            >
+              View Full Photo Gallery <span aria-hidden="true">&rarr;</span>
+            </Link>
           </div>
         </div>
       </section>

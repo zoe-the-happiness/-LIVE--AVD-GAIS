@@ -14,6 +14,7 @@ import { About } from "./pages/About";
 import { Membership } from "./pages/Membership";
 import { Districts } from "./pages/Districts";
 import { Notices } from "./pages/Notices";
+import { Gallery } from "./pages/Gallery";
 import { Contact } from "./pages/Contact";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
@@ -42,6 +43,7 @@ export default function App() {
             <Route path="membership" element={<Membership />} />
             <Route path="districts" element={<Districts />} />
             <Route path="notices" element={<Notices />} />
+            <Route path="gallery" element={<Gallery />} />
             <Route path="contact" element={<Contact />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="terms" element={<Terms />} />
