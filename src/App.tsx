@@ -15,6 +15,7 @@ import { Membership } from "./pages/Membership";
 import { Districts } from "./pages/Districts";
 import { Notices } from "./pages/Notices";
 import { Gallery } from "./pages/Gallery";
+import { MembersPortal } from "./pages/MembersPortal";
 import { Contact } from "./pages/Contact";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
@@ -44,6 +45,7 @@ export default function App() {
             <Route path="districts" element={<Districts />} />
             <Route path="notices" element={<Notices />} />
             <Route path="gallery" element={<Gallery />} />
+            <Route path="members-portal" element={<MembersPortal />} />
             <Route path="contact" element={<Contact />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="terms" element={<Terms />} />

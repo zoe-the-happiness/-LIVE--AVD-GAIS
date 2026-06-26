@@ -27,9 +27,10 @@ export function Footer() {
           <ul className="space-y-3 text-sm">
             <li><Link to="/about" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> About Us</Link></li>
             <li><Link to="/membership" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Membership</Link></li>
-            <li><Link to="/districts" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Districts</Link></li>
+            <li><Link to="/districts" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Units</Link></li>
             <li><Link to="/notices" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Notices & Updates</Link></li>
             <li><Link to="/gallery" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Photo Gallery</Link></li>
+            <li><Link to="/members-portal" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Members Portal</Link></li>
           </ul>
         </div>
 

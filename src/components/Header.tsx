@@ -8,9 +8,10 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Membership", href: "/membership" },
-  { name: "Districts", href: "/districts" },
+  { name: "Units", href: "/districts" },
   { name: "Notices", href: "/notices" },
   { name: "Gallery", href: "/gallery" },
+  { name: "Members Portal", href: "/members-portal" },
   { name: "Contact Us", href: "/contact" },
 ];
 
