@@ -143,7 +143,7 @@ export function About() {
           {/* Governing Body Section */}
           <div className="py-12">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Our Governing Body</h2>
+              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Central Executive Committee 2026-28</h2>
               <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
                 Meet the dedicated leaders guiding the association towards a united and empowered veterinary profession in West Bengal.
               </p>
@@ -151,39 +151,90 @@ export function About() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { name: "Dr. Tuhin Chakravorty", designation: "President" },
-                { name: "Dr. Sukanta Roy", designation: "Vice President" },
-                { name: "Dr. Amit Sarkar", designation: "Vice President" },
-                { name: "Dr. Biswadip Rakshit", designation: "Vice President" },
-                { name: "Dr. Niranjan Roy", designation: "Vice President" },
-                { name: "Dr. Prasanta Kr. Bera", designation: "General Secretary" },
+                { name: "Dr. Tuhin Chakraborty", designation: "Advisor" },
+                { name: "Dr. Sujit Dey", designation: "Advisor" },
+                { name: "Dr. Manoranjan Roy", designation: "Advisor" },
+                { name: "Dr. Pradip Pati", designation: "President" },
+                { name: "Dr. Banibrata Nayek", designation: "Vice President" },
+                { name: "Dr. Indranil Bera", designation: "Vice President" },
+                { name: "Dr. Gourisankar Hatui", designation: "Vice President" },
+                { name: "Dr. Sribas Biswas", designation: "Vice President" },
+                { name: "Dr. Prasanta Bera", designation: "General Secretary" },
+                { name: "Dr. Sukanta Roy", designation: "Asst. General Secretary" },
                 { name: "Dr. Krishna Prasad Mukherjee", designation: "Joint Secretary" },
+                { name: "Dr. Biswadip Rakshit", designation: "Joint Secretary" },
                 { name: "Dr. Atanu Sarkar", designation: "Joint Secretary" },
-                { name: "Dr. Prabir Ch. Pradhan", designation: "Joint Secretary" },
-                { name: "Dr. Dwijen Mitra", designation: "Asst. Secretary" },
-                { name: "Dr. Chandan Mukherjee", designation: "Asst. Secretary" },
-                { name: "Dr. Sarbasish Mondal", designation: "Office Secretary" },
-                { name: "Dr. Jayanta Biswas", designation: "Treasurer" }
-              ].map((member, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-saffron-300 transition-all flex items-center gap-4 group"
-                >
-                  <div className="w-12 h-12 bg-slate-50 text-slate-700 rounded-xl flex items-center justify-center font-bold text-sm shrink-0 border border-slate-100 group-hover:bg-saffron-50 group-hover:text-saffron-600 group-hover:border-saffron-100 transition-colors">
-                    <Users className="w-5 h-5" />
+                { name: "Dr. Kartik Roy", designation: "Office Secretary" },
+                { name: "Dr. Debi Prasad Nandi", designation: "Treasurer" },
+                { name: "Dr. Jayanta Biswas", designation: "Asst. Secretary" },
+                { name: "Dr. Amit Sarkar", designation: "Asst. Secretary" },
+                { name: "Dr. Chandan Ghosh", designation: "Asst. Secretary" },
+                { name: "Dr. Krishnendu Sinha", designation: "Asst. Secretary" },
+                { name: "Dr. Prashant Bhagat", designation: "Member" },
+                { name: "Dr. Soma Das (Saha)", designation: "Member" },
+                { name: "Dr. Prabir Chandra Pradhan", designation: "Member" },
+                { name: "Dr. Partha Sarathi Mondal", designation: "Member" },
+                { name: "Dr. Piyush Barman", designation: "Member" },
+                { name: "Dr. Dipak Dey", designation: "Member" }
+              ].map((member, index) => {
+                const getBadgeStyles = (designation: string) => {
+                  switch (designation) {
+                    case "Advisor":
+                      return "bg-slate-100 text-slate-700 border-slate-200";
+                    case "President":
+                      return "bg-amber-100 text-amber-800 border-amber-200 font-semibold";
+                    case "Vice President":
+                      return "bg-amber-50 text-amber-700 border-amber-100";
+                    case "General Secretary":
+                      return "bg-emerald-100 text-emerald-800 border-emerald-200 font-semibold";
+                    case "Asst. General Secretary":
+                      return "bg-emerald-50 text-emerald-700 border-emerald-100";
+                    case "Joint Secretary":
+                    case "Asst. Secretary":
+                    case "Office Secretary":
+                      return "bg-blue-50 text-blue-700 border-blue-100";
+                    case "Treasurer":
+                      return "bg-indigo-50 text-indigo-700 border-indigo-100";
+                    default:
+                      return "bg-slate-50 text-slate-500 border-slate-200";
+                  }
+                };
+
+                return (
+                  <div 
+                    key={index} 
+                    className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-saffron-300 transition-all flex items-center gap-4 group"
+                  >
+                    <div className="w-12 h-12 bg-slate-50 text-slate-700 rounded-xl flex items-center justify-center font-bold text-sm shrink-0 border border-slate-100 group-hover:bg-saffron-50 group-hover:text-saffron-600 group-hover:border-saffron-100 transition-colors">
+                      <Users className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-slate-900 group-hover:text-saffron-700 transition-colors">
+                        {member.name}
+                      </h3>
+                      <span className={`inline-block text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border mt-1 ${getBadgeStyles(member.designation)}`}>
+                        {member.designation}
+                      </span>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-saffron-700 transition-colors">
-                      {member.name}
-                    </h3>
-                    <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">
-                      {member.designation}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
+
+          {/* Central Executive Committee Team Photo Section */}
+          <div className="mt-16 bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+            <div className="p-8 sm:p-12 text-center">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-100 max-w-4xl mx-auto shadow-md">
+                <img 
+                  src="https://ik.imagekit.io/avdwb/cec%202026.webp" 
+                  alt="AVD Central Executive Committee 2026" 
+                  className="w-full h-auto object-cover max-h-[550px]"
+                />
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

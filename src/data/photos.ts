@@ -25,4 +25,7 @@ export const allPhotos = [
   "https://ik.imagekit.io/avdwb/20260519%20AVD%20Photos%20(6).webp"
 ];
 
-export const heroPhotos = [...allPhotos];
+export const heroPhotos = [
+  "https://ik.imagekit.io/avdwb/cec%202026.webp",
+  ...allPhotos
+];
