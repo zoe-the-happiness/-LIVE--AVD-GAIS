@@ -1,12 +1,21 @@
 export const noticesData = [
   {
+    id: 4,
+    date: "June 30, 2026",
+    type: "Official",
+    title: "Urgent intervention to exempt Veterinary Doctors from Human Census and other extra-departmental duties",
+    description: "Urgent intervention to exempt Veterinary Doctors from Human Census and other extra-departmental duties for ensuring uninterrupted veterinary services and implementation of National Animal Disease Con",
+    link: "https://drive.google.com/file/d/1QukmANtWy7plmRRZ7EZTlxhzIGBrlXcv/view?usp=sharing",
+    isNew: true,
+  },
+  {
     id: 3,
     date: "June 1, 2026",
     type: "Official",
     title: "Letter regarding urgent intervention regarding engagement of Veterinary Officers and Animal Health Staff in extra-departmental duties",
     description: "Letter to competent authority requesting Urgent intervention regarding engagement of Veterinary Officers and Animal Health Staff in extra-departmental duties causing closure of Animal Health Institutions and disruption of essential veterinary services",
     link: "https://drive.google.com/file/d/1h7FPkdsGRZlVsqycOQDAA3bATPLtb36X/view?usp=sharing",
-    isNew: true,
+    isNew: false,
   },
   {
     id: 2,
