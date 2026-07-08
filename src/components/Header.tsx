@@ -53,15 +53,6 @@ export function Header() {
         
         {/* Mobile menu trigger */}
         <div className="flex lg:hidden items-center gap-4">
-          {/* Language Switcher Mobile */}
-          <button
-            onClick={() => setLanguage(language === "en" ? "bn" : "en")}
-            className="flex items-center gap-1 text-xs font-bold text-slate-600 border border-slate-200 px-2.5 py-1 rounded-full hover:bg-slate-50 cursor-pointer"
-          >
-            <Globe className="w-3.5 h-3.5 text-saffron-500" />
-            <span>{language === "en" ? "BN" : "EN"}</span>
-          </button>
-          
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -145,15 +136,6 @@ export function Header() {
 
         {/* Language selector & CTA button desktop */}
         <div className="hidden lg:flex items-center gap-4">
-          <button
-            onClick={() => setLanguage(language === "en" ? "bn" : "en")}
-            className="flex items-center gap-1.5 text-xs font-bold text-slate-600 border border-slate-200 px-3.5 py-1.5 rounded-full hover:bg-slate-50 hover:border-saffron-200 transition-colors cursor-pointer"
-            title={language === "en" ? "Switch to Bengali" : "Switch to English"}
-          >
-            <Globe className="w-4 h-4 text-saffron-500 animate-pulse" />
-            <span>{language === "en" ? "বাংলা (BN)" : "English (EN)"}</span>
-          </button>
-
           <Link to="/contact" className="bg-saffron-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-saffron-700 transition-colors">
             Contact Us
           </Link>
