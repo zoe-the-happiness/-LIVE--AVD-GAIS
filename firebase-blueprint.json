@@ -1,0 +1,53 @@
+{
+  "entities": {
+    "Newsletter": {
+      "title": "Newsletter",
+      "description": "AVD monthly newsletter Pashu Sewa Samvad issues",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the newsletter issue"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the newsletter issue"
+        },
+        "month": {
+          "type": "string",
+          "description": "Month and year of publication"
+        },
+        "pdfUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Download or view link for the PDF document"
+        },
+        "thumbnailUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL for the newsletter thumbnail cover image"
+        },
+        "publishedAt": {
+          "type": "string",
+          "format": "date",
+          "description": "Exact publication date"
+        },
+        "isLatest": {
+          "type": "boolean",
+          "description": "Flag to mark if it is the current latest issue"
+        },
+        "description": {
+          "type": "string",
+          "description": "Short summary or description of the issue content"
+        }
+      },
+      "required": ["id", "title", "month", "pdfUrl", "thumbnailUrl", "publishedAt"]
+    }
+  },
+  "firestore": {
+    "/newsletters/{newsletterId}": {
+      "schema": "Newsletter",
+      "description": "Collection storing issues of Pashu Sewa Samvad (VetOutreach) newsletter"
+    }
+  }
+}

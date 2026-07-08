@@ -1,12 +1,36 @@
 export const noticesData = [
   {
+    id: 6,
+    date: "July 08, 2026",
+    type: "Publication",
+    title: "AVD Smaranika 2026 — Call for Submissions & Contributions",
+    description: "The Association of Veterinary Doctors invites veterinary doctors and their families to submit their literary and artistic contributions for the annual flagship Smaranika souvenir.\n\nYou can submit stories, memoirs, poems, travelogues, articles, photographs, and children's drawings/writings using our secure online submission form.",
+    link: "https://forms.gle/AQkD7bE8W2UJkTR37",
+    linkText: "Submit Online",
+    isNew: true,
+  },
+  {
+    id: 5,
+    date: "July 08, 2026",
+    type: "Official",
+    title: "Invitation for Expression of Interest — Chartered Accountant Firm",
+    description: "Ref: AVD/EOI/CA/2026/01 | Date: 08 July 2026\n\nThe Association of Veterinary Doctors invites Expression of Interest from eligible practising Chartered Accountant firms for appointment as its CA firm for statutory, compliance and advisory services for two financial years (FY 2026-27 and FY 2027-28).\n\nEligible firms may download the EOI and prescribed formats below and submit their response by email to contact@avdwb.com or in a sealed envelope to the registered office.\n\n• Last date for queries: 15 July 2026.\n• Last date for submission: 22 July 2026, 5:00 PM.\n\nThe Association reserves the right to accept or reject any or all Expressions of Interest without assigning any reason.\n\nIssued by the General Secretary, for and on behalf of the Central Executive Committee.",
+    link: "#",
+    downloads: [
+      { label: "EOI (AVD/EOI/CA/2026/70) • Annex A to D", url: "https://drive.google.com/file/d/1D_N7Q2jLeodKBmkB7XnlQ1iIWQexkla2/view?usp=sharing" },
+      { label: "Annexure E GST Opinion Certificate format", url: "https://drive.google.com/file/d/1LE98kxZ6_X6CoAjkLjCKpUsfbbhyS_js/view?usp=sharing" },
+      { label: "Forwarding Letter format", url: "https://drive.google.com/file/d/1RIXw2E0DzDvp9gIXmgMsqBBkz4R3hUr6/view?usp=sharing" }
+    ],
+    isNew: false,
+  },
+  {
     id: 4,
     date: "June 30, 2026",
     type: "Official",
     title: "Urgent intervention to exempt Veterinary Doctors from Human Census and other extra-departmental duties",
     description: "Urgent intervention to exempt Veterinary Doctors from Human Census and other extra-departmental duties for ensuring uninterrupted veterinary services and implementation of National Animal Disease Con",
     link: "https://drive.google.com/file/d/1QukmANtWy7plmRRZ7EZTlxhzIGBrlXcv/view?usp=sharing",
-    isNew: true,
+    isNew: false,
   },
   {
     id: 3,

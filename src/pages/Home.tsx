@@ -93,12 +93,6 @@ export function Home() {
             <Link to="/membership" className="w-full sm:w-auto bg-gradient-to-r from-saffron-500 to-saffron-600 text-white px-8 py-4 sm:py-3.5 rounded-xl sm:rounded-lg font-bold text-base sm:text-sm shadow-[0_0_20px_rgba(255,153,51,0.3)] hover:shadow-[0_0_25px_rgba(255,153,51,0.4)] hover:from-saffron-400 hover:to-saffron-500 text-center flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5">
               Become a Member <ArrowRight className="h-5 w-5 sm:h-4 sm:w-4" />
             </Link>
-            <a href="https://drive.google.com/file/d/1HasUvMwGKvn1KYCAiAmHDVKJw-KW5-ND/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-white/10 border border-white/20 text-white px-8 py-4 sm:py-3.5 rounded-xl sm:rounded-lg font-bold text-base sm:text-sm hover:bg-white/20 text-center backdrop-blur-md transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-              Download Application
-            </a>
-            <Link to="/about" className="w-full sm:w-auto bg-white/10 border border-white/20 text-white px-8 py-4 sm:py-3.5 rounded-xl sm:rounded-lg font-bold text-base sm:text-sm hover:bg-white/20 text-center backdrop-blur-md transition-all transform hover:-translate-y-0.5">
-              About AVD
-            </Link>
           </div>
         </div>
       </section>
@@ -159,14 +153,35 @@ export function Home() {
                   <span className="text-sm text-blue-800/70 font-medium">{notice.date}</span>
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{notice.title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
+                <p className="text-sm text-slate-600 leading-relaxed max-w-3xl whitespace-pre-line">
                   {notice.description}
                 </p>
+                {notice.downloads && notice.downloads.length > 0 && (
+                  <div className="mt-4 space-y-2 max-w-2xl">
+                    <h4 className="text-xs font-bold uppercase text-blue-800/60 tracking-wider">Downloads & Formats:</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {notice.downloads.map((dl, idx) => (
+                        <a
+                          key={idx}
+                          href={dl.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-xs font-semibold text-blue-700 hover:text-blue-800 bg-blue-100/50 hover:bg-blue-100 px-3 py-2 rounded-lg border border-blue-200/40 hover:border-blue-200 transition-all truncate"
+                        >
+                          <span className="w-5 h-5 rounded bg-blue-200 text-blue-800 flex items-center justify-center text-[10px] shrink-0 font-bold">
+                            {idx + 1}
+                          </span>
+                          <span className="truncate">{dl.label}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
               <div className="flex flex-col sm:flex-row w-full md:w-auto gap-3 shrink-0">
-                {notice.link !== "#" && (
+                {(!notice.downloads || notice.downloads.length === 0) && notice.link !== "#" && (
                   <a href={notice.link} target="_blank" rel="noopener noreferrer" className="text-center font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors">
-                    View
+                    {notice.linkText || "View"}
                   </a>
                 )}
               </div>

@@ -19,6 +19,10 @@ import { MembersPortal } from "./pages/MembersPortal";
 import { Contact } from "./pages/Contact";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
+import { Publications } from "./pages/Publications";
+import { PublicationsNewsletter } from "./pages/PublicationsNewsletter";
+import { PublicationsJournal } from "./pages/PublicationsJournal";
+import { PublicationsSmaranika } from "./pages/PublicationsSmaranika";
 
 export default function App() {
   useEffect(() => {
@@ -49,6 +53,10 @@ export default function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="terms" element={<Terms />} />
+            <Route path="publications" element={<Publications />} />
+            <Route path="publications/newsletter" element={<PublicationsNewsletter />} />
+            <Route path="publications/journal" element={<PublicationsJournal />} />
+            <Route path="publications/smaranika" element={<PublicationsSmaranika />} />
           </Route>
         </Routes>
       </BrowserRouter>
