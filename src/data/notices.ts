@@ -1,14 +1,16 @@
-export const noticesData = [
-  {
-    id: 6,
-    date: "July 08, 2026",
-    type: "Publication",
-    title: "AVD Smaranika 2026 — Call for Submissions & Contributions",
-    description: "The Association of Veterinary Doctors invites veterinary doctors and their families to submit their literary and artistic contributions for the annual flagship Smaranika souvenir.\n\nYou can submit stories, memoirs, poems, travelogues, articles, photographs, and children's drawings/writings using our secure online submission form.",
-    link: "https://forms.gle/AQkD7bE8W2UJkTR37",
-    linkText: "Submit Online",
-    isNew: true,
-  },
+export interface Notice {
+  id: number;
+  date: string;
+  type: string;
+  title: string;
+  description: string;
+  link: string;
+  linkText?: string;
+  downloads?: { label: string; url: string }[];
+  isNew?: boolean;
+}
+
+export const noticesData: Notice[] = [
   {
     id: 5,
     date: "July 08, 2026",
@@ -21,7 +23,7 @@ export const noticesData = [
       { label: "Annexure E GST Opinion Certificate format", url: "https://drive.google.com/file/d/1LE98kxZ6_X6CoAjkLjCKpUsfbbhyS_js/view?usp=sharing" },
       { label: "Forwarding Letter format", url: "https://drive.google.com/file/d/1RIXw2E0DzDvp9gIXmgMsqBBkz4R3hUr6/view?usp=sharing" }
     ],
-    isNew: false,
+    isNew: true,
   },
   {
     id: 4,
