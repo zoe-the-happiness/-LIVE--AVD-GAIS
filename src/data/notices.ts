@@ -12,6 +12,15 @@ export interface Notice {
 
 export const noticesData: Notice[] = [
   {
+    id: 6,
+    date: "July 10, 2026",
+    type: "Official",
+    title: "সরকারি হাঁস-মুরগি খামারের স্থায়িত্ব রক্ষা এবং হাঁস-মুরগির বাচ্চা বিতরণ কর্মসূচির পুনরারম্ভ সংক্রান্ত আবেদন",
+    description: "সরকারি হাঁস-মুরগি খামারের স্থায়িত্ব রক্ষা এবং হাঁস-মুরগির বাচ্চা বিতরণ কর্মসূচির পুনরারম্ভ সংক্রান্ত আবেদন। Re-opening / Resumption of chick distribution and sustainable running of State Poultry Farms in West Bengal.",
+    link: "https://drive.google.com/file/d/14DawL-aaYyp0pDAlRGYKRCH54COreNbg/view?usp=sharing",
+    isNew: true,
+  },
+  {
     id: 5,
     date: "July 08, 2026",
     type: "Official",
