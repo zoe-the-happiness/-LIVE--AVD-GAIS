@@ -1,4 +1,4 @@
-import { Users, ShieldCheck, HeartPulse, BookOpen, GraduationCap, Globe2, Mic, Quote } from "lucide-react";
+import { Users, ShieldCheck, HeartPulse, BookOpen, GraduationCap, Globe2, Mic, Quote, Award, Scroll } from "lucide-react";
 
 export function About() {
   return (
@@ -137,6 +137,86 @@ export function About() {
                   </div>
                 </div>
               </section>
+            </div>
+          </div>
+
+          {/* Founding Pillars (2015) Section */}
+          <div className="bg-gradient-to-b from-amber-50/40 to-orange-50/20 border border-amber-200/60 rounded-3xl p-8 sm:p-12 shadow-sm relative overflow-hidden">
+            {/* Watermark Seal */}
+            <div className="absolute -right-12 -bottom-12 text-amber-500/5 select-none pointer-events-none transform -rotate-12">
+              <Award className="w-96 h-96" />
+            </div>
+
+            <div className="relative z-10">
+              <div className="text-center mb-10 max-w-3xl mx-auto">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-amber-800 text-xs font-extrabold rounded-full border border-amber-200 uppercase tracking-widest mb-4">
+                  <Award className="w-3.5 h-3.5 animate-pulse" /> Founding Pillars of AVD
+                </span>
+                <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl mb-4">
+                  Founding Executive Committee (2015)
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed">
+                  Names, addresses and descriptions of the members of the Executive Committee as at registration (2015), as recorded in the registered Memorandum of Association:
+                </p>
+              </div>
+
+              {/* Founding Members Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+                {[
+                  { name: "Dr. Tuhin Chakravorty", designation: "President", badgeClass: "bg-amber-100/80 text-amber-900 border-amber-200" },
+                  { name: "Dr. Sukanta Roy", designation: "Vice President", badgeClass: "bg-slate-100 text-slate-800 border-slate-200" },
+                  { name: "Dr. Amit Sarkar", designation: "Vice President", badgeClass: "bg-slate-100 text-slate-800 border-slate-200" },
+                  { name: "Dr. Biswadip Rakshit", designation: "Vice President", badgeClass: "bg-slate-100 text-slate-800 border-slate-200" },
+                  { name: "Dr. Niranjan Roy", designation: "Vice President", badgeClass: "bg-slate-100 text-slate-800 border-slate-200" },
+                  { name: "Dr. Prasanta Kr. Bera", designation: "General Secretary", badgeClass: "bg-emerald-100/80 text-emerald-900 border-emerald-200 font-bold" },
+                  { name: "Dr. Krishna Prasad Mukherjee", designation: "Joint Secretary", badgeClass: "bg-blue-50 text-blue-800 border-blue-100" },
+                  { name: "Dr. Atanu Sarkar", designation: "Joint Secretary", badgeClass: "bg-blue-50 text-blue-800 border-blue-100" },
+                  { name: "Dr. Prabir Ch. Pradhan", designation: "Joint Secretary", badgeClass: "bg-blue-50 text-blue-800 border-blue-100" },
+                  { name: "Dr. Dwijen Mitra", designation: "Asst. Secretary", badgeClass: "bg-blue-50/60 text-blue-700 border-blue-100/60" },
+                  { name: "Dr. Chandan Mukherjee", designation: "Asst. Secretary", badgeClass: "bg-blue-50/60 text-blue-700 border-blue-100/60" },
+                  { name: "Dr. Sarbasish Mondal", designation: "Office Secretary", badgeClass: "bg-blue-50/60 text-blue-700 border-blue-100/60" },
+                  { name: "Dr. Jayanta Biswas", designation: "Treasurer", badgeClass: "bg-indigo-50 text-indigo-800 border-indigo-100" }
+                ].map((member, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-white border border-amber-100 rounded-2xl p-5 shadow-xs hover:shadow-md hover:border-amber-300 transition-all flex items-center gap-4"
+                  >
+                    <div className="w-10 h-10 bg-amber-50 text-amber-700 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 border border-amber-100/50">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-extrabold text-slate-900">
+                        {member.name}
+                      </h4>
+                      <span className={`inline-block text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full border mt-1.5 ${member.badgeClass}`}>
+                        {member.designation}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Glorious Solemn Declaration Card */}
+              <div className="bg-amber-950 text-amber-50 rounded-2xl p-6 sm:p-8 border border-amber-800/50 relative overflow-hidden shadow-lg">
+                <div className="absolute right-4 bottom-4 text-amber-900/10 pointer-events-none select-none">
+                  <Scroll className="w-32 h-32" />
+                </div>
+                <div className="relative z-10 flex flex-col md:flex-row gap-5 items-center md:items-start text-center md:text-left">
+                  <div className="p-3 bg-amber-900 text-amber-300 rounded-xl">
+                    <Scroll className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h4 className="text-amber-300 font-serif italic text-lg sm:text-xl leading-relaxed mb-4">
+                      "We, the several persons whose name, address and occupation are hereunto subscribed are desirous of being formed into an association in pursuance of this memorandum of association."
+                    </h4>
+                    <div className="flex flex-wrap items-center justify-between gap-4 border-t border-amber-900/60 pt-4 text-xs font-bold uppercase tracking-wider text-amber-400">
+                      <span>Dated the 31st day of January, 2015</span>
+                      <span className="px-2.5 py-1 bg-amber-900 text-amber-200 rounded-md">Reg. No. 34784</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
