@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, ArrowRight, Globe, ExternalLink } from "lucide-react";
+import { Mail, MapPin, ArrowRight, Globe, ExternalLink, Phone } from "lucide-react";
 import { useLanguage } from "../lib/i18n";
 import { CONFIG } from "../lib/config";
 
@@ -98,12 +98,32 @@ export function Footer() {
               <span className="text-slate-400">F-1, Tribeni Complex<br/>36A Sahitya Parishad Street<br/>Kolkata - 700006</span>
             </li>
             <li className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-saffron-500 shrink-0" />
-              <a href="mailto:contact@avdwb.com" className="text-slate-400 hover:text-white transition-colors">contact@avdwb.com</a>
-            </li>
-            <li className="flex items-center gap-3">
               <Globe className="w-5 h-5 text-saffron-500 shrink-0" />
               <a href="https://www.avdwb.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">www.avdwb.com</a>
+            </li>
+            <li className="border-t border-slate-800/60 pt-3 flex flex-col gap-1.5">
+              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
+                <Phone className="w-3.5 h-3.5 text-saffron-500" /> Helplines
+              </span>
+              <div className="flex flex-col text-xs text-slate-400 gap-1">
+                <span>Secy: <a href="tel:9434306504" className="hover:text-white transition-colors font-medium">9434306504</a></span>
+              </div>
+            </li>
+            <li className="border-t border-slate-800/60 pt-3 flex flex-col gap-1.5">
+              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
+                <Mail className="w-3.5 h-3.5 text-saffron-500" /> Emails
+              </span>
+              <div className="flex flex-col text-xs text-slate-400 gap-1.5">
+                <a href="mailto:contact@avdwb.com" className="hover:text-white transition-colors truncate">contact@avdwb.com</a>
+                <a href="mailto:support@avdwb.com" className="hover:text-white transition-colors truncate">support@avdwb.com</a>
+                <a href="mailto:treasurer@avdwb.com" className="hover:text-white transition-colors truncate">treasurer@avdwb.com</a>
+                <span className="text-[10px] text-slate-500 font-semibold uppercase mt-1">Other Desks</span>
+                <div className="grid grid-cols-3 gap-1 text-[11px]">
+                  <a href="mailto:admin@avdwb.com" className="hover:text-white transition-colors" title="admin@avdwb.com">admin@</a>
+                  <a href="mailto:csr@avdwb.com" className="hover:text-white transition-colors" title="csr@avdwb.com">csr@</a>
+                  <a href="mailto:it@avdwb.com" className="hover:text-white transition-colors" title="it@avdwb.com">it@</a>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -111,10 +131,16 @@ export function Footer() {
 
       <div className="max-w-7xl mx-auto pt-8 border-t border-slate-800/50 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500 relative z-10 text-center md:text-left">
         <p>&copy; {new Date().getFullYear()} AVD West Bengal (Reg. No. 34784). All Rights Reserved.</p>
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-x-8 gap-y-4 items-center">
-          <Link to="/privacy" className="hover:text-saffron-400 transition-colors py-2 sm:py-0">Privacy Policy</Link>
-          <Link to="/terms" className="hover:text-saffron-400 transition-colors py-2 sm:py-0">Terms of Service</Link>
-          <div className="flex items-center gap-2 py-2 sm:py-0">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-x-4 gap-y-2 items-center">
+          <Link to="/privacy" className="hover:text-saffron-400 transition-colors py-1">Privacy Policy</Link>
+          <span className="text-slate-800 hidden sm:inline">•</span>
+          <Link to="/terms" className="hover:text-saffron-400 transition-colors py-1">Terms of Service</Link>
+          <span className="text-slate-800 hidden sm:inline">•</span>
+          <Link to="/refund-policy" className="hover:text-saffron-400 transition-colors py-1">Refund &amp; Cancellation</Link>
+          <span className="text-slate-800 hidden sm:inline">•</span>
+          <Link to="/shipping-policy" className="hover:text-saffron-400 transition-colors py-1">Shipping &amp; Export</Link>
+          <span className="text-slate-800 hidden sm:inline">•</span>
+          <div className="flex items-center gap-2 py-1">
             <span className="w-2 h-2 rounded-full bg-saffron-500 animate-pulse shadow-[0_0_8px_rgba(255,153,51,0.5)]"></span>
             <span className="font-medium tracking-wide">Portal v2.2</span>
           </div>

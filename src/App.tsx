@@ -19,6 +19,8 @@ import { MembersPortal } from "./pages/MembersPortal";
 import { Contact } from "./pages/Contact";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
+import { RefundPolicy } from "./pages/RefundPolicy";
+import { ShippingPolicy } from "./pages/ShippingPolicy";
 import { Publications } from "./pages/Publications";
 import { PublicationsNewsletter } from "./pages/PublicationsNewsletter";
 import { PublicationsJournal } from "./pages/PublicationsJournal";
@@ -53,6 +55,8 @@ export default function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="terms" element={<Terms />} />
+            <Route path="refund-policy" element={<RefundPolicy />} />
+            <Route path="shipping-policy" element={<ShippingPolicy />} />
             <Route path="publications" element={<Publications />} />
             <Route path="publications/newsletter" element={<PublicationsNewsletter />} />
             <Route path="publications/journal" element={<PublicationsJournal />} />
