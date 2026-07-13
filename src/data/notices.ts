@@ -12,6 +12,15 @@ export interface Notice {
 
 export const noticesData: Notice[] = [
   {
+    id: 7,
+    date: "July 12, 2026",
+    type: "Official",
+    title: "Urgent matter regarding uninterrupted expansion of MVC and MVU under the joint Central-State framework",
+    description: "Regarding the uninterrupted expansion of MVC (Mobile Veterinary Clinic) and MVU (Mobile Veterinary Unit) in the financial year 2026-27 and their inclusion under the joint Central-State framework.",
+    link: "https://drive.google.com/file/d/1SBIBciMoM7vZWaSZsFxD4ievWmwROSxT/view?usp=sharing",
+    isNew: true,
+  },
+  {
     id: 6,
     date: "July 10, 2026",
     type: "Official",
