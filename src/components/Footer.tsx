@@ -34,7 +34,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm">
             <li><Link to="/about" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> About Us</Link></li>
             <li><Link to="/membership" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Membership</Link></li>
-            <li><Link to="/districts" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Units</Link></li>
+            <li><Link to="/about#units" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Units</Link></li>
             <li><Link to="/notices" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Notices & Updates</Link></li>
             <li><Link to="/gallery" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Photo Gallery</Link></li>
             <li><Link to="/members-portal" className="hover:text-saffron-400 transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-saffron-500 transition-colors"/> Members Portal</Link></li>
@@ -90,9 +90,17 @@ export function Footer() {
         {/* Contact Details */}
         <div>
           <h4 className="text-white font-semibold mb-6 flex items-center gap-2">
-            <span className="w-1 h-4 bg-gradient-to-b from-saffron-400 to-saffron-600 rounded-full"></span> Contact Details
+            <span className="w-1 h-4 bg-gradient-to-b from-saffron-400 to-saffron-600 rounded-full"></span>
+            <Link to="/contact" className="hover:text-saffron-400 transition-colors">
+              Contact Details
+            </Link>
           </h4>
           <ul className="space-y-4 text-sm">
+            <li>
+              <Link to="/contact" className="inline-flex items-center gap-2 text-saffron-500 hover:text-saffron-400 font-semibold transition-colors text-xs uppercase tracking-wider">
+                Contact Us / Support Form &rarr;
+              </Link>
+            </li>
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-saffron-500 shrink-0 transform mt-0.5" />
               <span className="text-slate-400">F-1, Tribeni Complex<br/>36A Sahitya Parishad Street<br/>Kolkata - 700006</span>

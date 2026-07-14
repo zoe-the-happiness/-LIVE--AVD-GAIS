@@ -15,7 +15,6 @@ const navigation: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Membership", href: "/membership" },
-  { name: "Units", href: "/districts" },
   { 
     name: "Publications / প্রকাশনা", 
     href: "/publications",
@@ -27,7 +26,6 @@ const navigation: NavItem[] = [
   },
   { name: "Notices", href: "/notices" },
   { name: "Gallery", href: "/gallery" },
-  { name: "Members Portal", href: "/members-portal" },
 ];
 
 export function Header() {
@@ -67,7 +65,8 @@ export function Header() {
         <div className="hidden lg:flex gap-7 items-center">
           {navigation.map((item) => {
             const hasDropdown = !!item.dropdown;
-            const isActive = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));
+            const basePath = item.href.split('#')[0];
+            const isActive = location.pathname === item.href || (item.href !== '/' && (location.pathname === basePath || location.pathname.startsWith(basePath + '/')));
             
             if (hasDropdown) {
               return (
@@ -136,8 +135,8 @@ export function Header() {
 
         {/* Language selector & CTA button desktop */}
         <div className="hidden lg:flex items-center gap-4">
-          <Link to="/contact" className="bg-saffron-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-saffron-700 transition-colors">
-            Contact Us
+          <Link to="/members-portal" className="bg-saffron-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-saffron-700 transition-colors">
+            Members Portal
           </Link>
         </div>
       </nav>
@@ -236,6 +235,13 @@ export function Header() {
                   })}
                 </div>
                 <div className="py-6 space-y-2">
+                  <Link
+                    to="/members-portal"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-bold leading-7 text-saffron-600 hover:bg-gray-50"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Members Portal
+                  </Link>
                   <Link
                     to="/membership"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"

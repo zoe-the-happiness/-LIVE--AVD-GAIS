@@ -12,7 +12,6 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Membership } from "./pages/Membership";
-import { Districts } from "./pages/Districts";
 import { Notices } from "./pages/Notices";
 import { Gallery } from "./pages/Gallery";
 import { MembersPortal } from "./pages/MembersPortal";
@@ -48,7 +47,6 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="membership" element={<Membership />} />
-            <Route path="districts" element={<Districts />} />
             <Route path="notices" element={<Notices />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="members-portal" element={<MembersPortal />} />

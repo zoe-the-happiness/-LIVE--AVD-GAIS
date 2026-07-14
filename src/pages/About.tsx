@@ -1,6 +1,20 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Users, ShieldCheck, HeartPulse, BookOpen, GraduationCap, Globe2, Mic, Quote, Award, Scroll } from "lucide-react";
 
 export function About() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace("#", ""));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [hash]);
   return (
     <div className="py-24 sm:py-32 bg-slate-50 min-h-screen">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -312,6 +326,30 @@ export function About() {
                   className="w-full h-auto object-cover max-h-[550px]"
                 />
               </div>
+            </div>
+          </div>
+
+          {/* AVD District Units Section */}
+          <div id="units" className="bg-white p-8 sm:p-12 rounded-3xl shadow-sm border border-slate-200 mt-16">
+            <h2 className="text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+              <span className="w-10 h-1 bg-saffron-500 rounded-full inline-block"></span>
+              AVD DISTRICT UNITS
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed mb-8">
+              The Association of Veterinary Doctors (AVD) maintains a robust and active presence across all districts in West Bengal. Each unit manages local operations, represents block-level veterinary needs, and organizes regional welfare activities.
+            </p>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              {[
+                "Alipurduar", "Bankura", "Birbhum", "Cooch Behar", "Dakshin Dinajpur",
+                "Darjeeling", "Haringhata - Kalyani farm Complex", "Hooghly", "Howrah", "Jalpaiguri", "Jhargram",
+                "Kalimpong", "Kolkata", "Malda", "Murshidabad", "Nadia",
+                "North 24 Parganas", "Paschim Bardhaman", "Paschim Medinipur", "Purba Bardhaman", "Purba Medinipur",
+                "Purulia", "South 24 Parganas", "Uttar Dinajpur"
+              ].map((unit, i) => (
+                <div key={i} className="border border-slate-100 rounded-2xl p-4 bg-slate-50 hover:bg-white hover:border-saffron-300 hover:shadow-md transition-all text-center flex items-center justify-center min-h-[72px]">
+                  <span className="font-semibold text-slate-800 text-sm leading-snug">{unit}</span>
+                </div>
+              ))}
             </div>
           </div>
 
