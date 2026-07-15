@@ -118,7 +118,7 @@ export function MembersPortal() {
                   </div>
                 </div>
                 <a 
-                  href="https://books.zohosecure.in/portal/associationofveterinarydoctors"
+                  href="https://books.zohosecure.in/portal/avdwb"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-bold text-xs sm:text-sm text-white bg-saffron-600 hover:bg-saffron-700 active:bg-saffron-800 px-5 py-3 rounded-xl transition-all shadow-xs hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:ring-offset-2 shrink-0 group"
