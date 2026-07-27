@@ -68,14 +68,6 @@ export function Contact() {
                       <a href="tel:9434306504" className="text-sm text-emerald-700 hover:underline font-bold">+91 9434306504</a>
                     </div>
                   </div>
-
-                  <div className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                    <div className="p-2 bg-emerald-50 text-emerald-700 rounded-lg font-bold text-xs">TR</div>
-                    <div>
-                      <h4 className="font-bold text-sm text-slate-800">Treasurer (Finance &amp; Accounts Head)</h4>
-                      <a href="tel:6289912112" className="text-sm text-emerald-700 hover:underline font-bold">+91 6289912112</a>
-                    </div>
-                  </div>
                 </div>
               </div>
 

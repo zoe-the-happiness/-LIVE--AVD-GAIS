@@ -1,9 +1,12 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { Users, ShieldCheck, HeartPulse, BookOpen, GraduationCap, Globe2, Mic, Quote, Award, Scroll } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
+import { Users, ShieldCheck, HeartPulse, BookOpen, GraduationCap, Globe2, Mic, Quote, Award, Scroll, Layers, UserCheck, Mail, CheckCircle2 } from "lucide-react";
+import { motion } from "motion/react";
+import { subCommitteesData } from "../data/subcommittees";
 
 export function About() {
   const { hash } = useLocation();
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   useEffect(() => {
     if (hash) {
@@ -18,10 +21,50 @@ export function About() {
   return (
     <div className="py-24 sm:py-32 bg-slate-50 min-h-screen">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl text-center mb-6 drop-shadow-sm">About AVD</h1>
-        <p className="text-xl text-slate-600 text-center max-w-3xl mx-auto mb-16">
-          The Association of Veterinary Doctors (AVD) is a dedicated professional body representing veterinarians across West Bengal.
-        </p>
+        <h1 className="text-4xl font-black tracking-tight text-slate-900 sm:text-5xl text-center mb-4 drop-shadow-sm">About AVD</h1>
+        
+        {/* Sanskrit Motto Sloka with Divine Glowing Aura */}
+        <div className="relative mb-12 mx-auto max-w-2xl group">
+          {/* Divine Glowing Background Aura */}
+          <motion.div 
+            initial={{ opacity: 0.6, scale: 0.98 }}
+            animate={{ 
+              opacity: [0.5, 0.85, 0.5],
+              scale: [0.99, 1.02, 0.99]
+            }}
+            transition={{ 
+              duration: 3.5, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            className="absolute -inset-1.5 bg-gradient-to-r from-amber-400/40 via-saffron-500/50 to-amber-300/40 rounded-3xl blur-xl"
+          />
+          
+          {/* Card Content */}
+          <div className="relative text-center px-6 py-7 sm:px-8 sm:py-8 rounded-2xl bg-gradient-to-r from-amber-50/95 via-saffron-50/98 to-amber-50/95 border border-saffron-300/90 shadow-[0_0_30px_rgba(245,158,11,0.28)] backdrop-blur-xs">
+            <Quote className="w-7 h-7 text-saffron-500/40 absolute top-3.5 left-4 transform -scale-x-100" />
+            <Quote className="w-7 h-7 text-saffron-500/40 absolute bottom-3.5 right-4" />
+            
+            <div className="font-serif text-xl sm:text-2xl font-bold text-amber-950 tracking-wide leading-relaxed py-1 [text-shadow:_0_1px_12px_rgba(217,119,6,0.2)]">
+              ज्ञानं सेवा च विज्ञानं ऐक्यं नः परमं बलम्।<br />
+              अयं पशुवैद्यसंघः प्राणिसेवारतः सदा॥
+            </div>
+            <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-saffron-400 to-transparent mx-auto my-3"></div>
+            <p className="text-xs sm:text-sm font-medium text-amber-900/80 italic">
+              "Knowledge, Service, and Science — Unity is our greatest strength.<br className="hidden sm:inline" />
+              This Association of Veterinary Doctors is forever dedicated to the service of all living beings."
+            </p>
+          </div>
+        </div>
+
+        <motion.p 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+          className="text-xl sm:text-2xl font-semibold text-slate-700 text-center max-w-3xl mx-auto mb-16 tracking-tight leading-relaxed"
+        >
+          An organisation for professional growth and nation building through Animal husbandry
+        </motion.p>
 
         <div className="space-y-16">
           {/* History Section */}
@@ -154,7 +197,7 @@ export function About() {
             </div>
           </div>
 
-          {/* Founding Pillars (2015) Section */}
+          {/* Founding Pillars Section */}
           <div className="bg-gradient-to-b from-amber-50/40 to-orange-50/20 border border-amber-200/60 rounded-3xl p-8 sm:p-12 shadow-sm relative overflow-hidden">
             {/* Watermark Seal */}
             <div className="absolute -right-12 -bottom-12 text-amber-500/5 select-none pointer-events-none transform -rotate-12">
@@ -163,11 +206,9 @@ export function About() {
 
             <div className="relative z-10">
               <div className="text-center mb-10 max-w-3xl mx-auto">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-amber-800 text-xs font-extrabold rounded-full border border-amber-200 uppercase tracking-widest mb-4">
-                  <Award className="w-3.5 h-3.5 animate-pulse" /> Founding Pillars of AVD
-                </span>
-                <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl mb-4">
-                  Founding Executive Committee (2015)
+                <h2 className="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl mb-4 flex items-center justify-center gap-3">
+                  <Award className="w-8 h-8 sm:w-10 sm:h-10 text-saffron-600 shrink-0" />
+                  Founding Pillars of AVD
                 </h2>
                 <p className="text-slate-600 text-base leading-relaxed">
                   Names, addresses and descriptions of the members of the Executive Committee as at registration (2015), as recorded in the registered Memorandum of Association:
@@ -253,12 +294,12 @@ export function About() {
                 { name: "Dr. Indranil Bera", designation: "Vice President" },
                 { name: "Dr. Gourisankar Hatui", designation: "Vice President" },
                 { name: "Dr. Sribas Biswas", designation: "Vice President" },
-                { name: "Dr. Prasanta Bera", designation: "General Secretary" },
+                { name: "Dr. Prasanta Kumar Bera", designation: "General Secretary" },
                 { name: "Dr. Sukanta Roy", designation: "Asst. General Secretary" },
                 { name: "Dr. Krishna Prasad Mukherjee", designation: "Joint Secretary" },
                 { name: "Dr. Biswadip Rakshit", designation: "Joint Secretary" },
                 { name: "Dr. Atanu Sarkar", designation: "Joint Secretary" },
-                { name: "Dr. Kartik Roy", designation: "Office Secretary" },
+                { name: "Dr. Kartick Chandra Roy", designation: "Office Secretary" },
                 { name: "Dr. Debi Prasad Nandi", designation: "Treasurer" },
                 { name: "Dr. Jayanta Biswas", designation: "Asst. Secretary" },
                 { name: "Dr. Amit Sarkar", designation: "Asst. Secretary" },
@@ -269,7 +310,9 @@ export function About() {
                 { name: "Dr. Prabir Chandra Pradhan", designation: "Member" },
                 { name: "Dr. Partha Sarathi Mondal", designation: "Member" },
                 { name: "Dr. Piyush Barman", designation: "Member" },
-                { name: "Dr. Dipak Dey", designation: "Member" }
+                { name: "Dr. Dipak Dey", designation: "Member" },
+                { name: "Dr. Tapan Kumar Mahata", designation: "Co-opted Member" },
+                { name: "Dr. Nirmalya Ranjan Sarkar", designation: "Co-opted Member" }
               ].map((member, index) => {
                 const getBadgeStyles = (designation: string) => {
                   switch (designation) {
@@ -289,6 +332,8 @@ export function About() {
                       return "bg-blue-50 text-blue-700 border-blue-100";
                     case "Treasurer":
                       return "bg-indigo-50 text-indigo-700 border-indigo-100";
+                    case "Co-opted Member":
+                      return "bg-purple-50 text-purple-700 border-purple-100 font-semibold";
                     default:
                       return "bg-slate-50 text-slate-500 border-slate-200";
                   }
@@ -326,6 +371,112 @@ export function About() {
                   className="w-full h-auto object-cover max-h-[550px]"
                 />
               </div>
+            </div>
+          </div>
+
+          {/* Sub-Committees Section */}
+          <div id="sub-committees" className="pt-8">
+            <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white p-8 sm:p-12 rounded-3xl shadow-xl relative overflow-hidden mb-12">
+              <div className="absolute right-0 top-0 translate-x-12 -translate-y-12 text-slate-700/20 pointer-events-none select-none">
+                <Layers className="w-96 h-96" />
+              </div>
+              <div className="relative z-10 max-w-3xl">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-saffron-500/20 text-saffron-300 border border-saffron-500/30 text-xs font-extrabold uppercase tracking-widest mb-4">
+                  <Layers className="w-4 h-4" /> AVD Specialized Wings
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white mb-4">
+                  Sub-Committees &amp; Compositions
+                </h2>
+                <p className="text-slate-300 text-base leading-relaxed mb-6">
+                  Per <strong>Resolution No. 39-2026-MOM-AVD</strong>, the Central Executive Committee has established specialized sub-committees to oversee key sectoral, technical, administrative, and welfare responsibilities across West Bengal.
+                </p>
+                <div className="p-4 bg-slate-800/80 rounded-2xl border border-slate-700/80 text-xs text-slate-300 leading-relaxed">
+                  <strong className="text-saffron-400">Composition Rule:</strong> Ex-officio members per general composition rules are not separately named below. Members are listed in order of seniority as per the official gradation list.
+                </div>
+              </div>
+            </div>
+
+            {/* Sub-Committee Cards */}
+            <div className="grid grid-cols-1 gap-8">
+              {subCommitteesData.map((item) => (
+                <div 
+                  key={item.id} 
+                  id={`annexure-${item.id.toLowerCase()}`}
+                  className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm hover:shadow-md transition-all relative overflow-hidden"
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-slate-900">
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    {/* Convenor Badge */}
+                    <div className="shrink-0 bg-saffron-50/80 border border-saffron-200/80 rounded-2xl p-4 flex items-center gap-3">
+                      <div className="w-10 h-10 bg-saffron-600 text-white rounded-xl flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
+                        <UserCheck className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-extrabold text-saffron-800 uppercase tracking-widest block">
+                          {item.jointConvenors ? "Joint Convenors" : "Convenor"}
+                        </span>
+                        <span className="text-sm font-extrabold text-slate-900">
+                          {item.jointConvenors ? item.jointConvenors.join(" & ") : item.convenor}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Members Section */}
+                  <div>
+                    <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
+                      <Users className="w-4 h-4 text-slate-500" />
+                      Sub-Committee Members {item.members.length > 0 && `(${item.members.length})`}
+                    </h4>
+
+                    {item.members.length > 0 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-6">
+                        {item.members.map((member, idx) => (
+                          <div 
+                            key={idx} 
+                            className="bg-slate-50 border border-slate-100 hover:border-saffron-200 hover:bg-white rounded-xl p-3 flex items-center gap-2.5 text-xs font-bold text-slate-800 transition-all shadow-2xs"
+                          >
+                            <span className="w-5 h-5 rounded-md bg-slate-200/60 text-slate-600 text-[10px] font-black flex items-center justify-center shrink-0">
+                              {idx + 1}
+                            </span>
+                            <span className="truncate">{member}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="p-4 bg-slate-50 rounded-xl border border-dashed border-slate-200 text-slate-500 text-xs italic mb-6">
+                        Members list comprising ex-officio and designated representatives as per general rules of composition.
+                      </div>
+                    )}
+
+                    {/* Special Notes (if present) */}
+                    {item.specialNote && (
+                      <div className="p-4 bg-amber-50/70 border border-amber-200/60 rounded-xl text-xs text-amber-900 mb-6 flex items-start gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                        <span><strong>Note:</strong> {item.specialNote}</span>
+                      </div>
+                    )}
+
+                    {/* Volunteer Callout Footer */}
+                    <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-600">
+                      <p className="italic">
+                        If anyone's name has been left out but they are willing to volunteer for this sub-committee, they are most welcome to join.
+                      </p>
+                      <Link 
+                        to="/contact" 
+                        className="inline-flex items-center gap-1.5 font-bold text-saffron-700 hover:text-saffron-800 bg-saffron-100/80 hover:bg-saffron-200 px-3.5 py-2 rounded-xl transition-colors shrink-0"
+                      >
+                        <Mail className="w-3.5 h-3.5" /> Contact Us to Volunteer
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
