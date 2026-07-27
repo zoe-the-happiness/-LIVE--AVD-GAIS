@@ -43,7 +43,8 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Brihat Chettri",
       "Dr. Shambo Chowdhury",
       "Dr. Keshab Chatterjee",
-      "Dr. Sourav Kumar"
+      "Dr. Sourav Kumar",
+      "Dr. Keshab Chattopadhyay"
     ]
   },
   {
@@ -107,7 +108,8 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Aditi Patra",
       "Dr. Nabanita Datta",
       "Dr. Aparna Das",
-      "Dr. Sutrishna Basu"
+      "Dr. Sutrishna Basu",
+      "Dr. Piyali Mondal"
     ]
   },
   {
@@ -206,7 +208,8 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Souvik Mondal",
       "Dr. Sushovan Chowdhury",
       "Dr. Krishnendu Mondal",
-      "Dr. Jyotirmay Adhikary"
+      "Dr. Jyotirmay Adhikary",
+      "Dr. Chandrakanta Jana"
     ],
     specialNote: "Faculty members of the West Bengal University of Animal and Fishery Sciences may be incorporated in this Sub-Committee by the Convenor with the approval of the Central Executive Committee."
   },
