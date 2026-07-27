@@ -229,7 +229,7 @@ export function About() {
                   { name: "Dr. Prabir Ch. Pradhan", designation: "Joint Secretary", badgeClass: "bg-blue-50 text-blue-800 border-blue-100" },
                   { name: "Dr. Dwijen Mitra", designation: "Asst. Secretary", badgeClass: "bg-blue-50/60 text-blue-700 border-blue-100/60" },
                   { name: "Dr. Chandan Mukherjee", designation: "Asst. Secretary", badgeClass: "bg-blue-50/60 text-blue-700 border-blue-100/60" },
-                  { name: "Dr. Sarbasish Mondal", designation: "Office Secretary", badgeClass: "bg-blue-50/60 text-blue-700 border-blue-100/60" },
+                  { name: "Dr. Sarbasish Mandal", designation: "Office Secretary", badgeClass: "bg-blue-50/60 text-blue-700 border-blue-100/60" },
                   { name: "Dr. Jayanta Biswas", designation: "Treasurer", badgeClass: "bg-indigo-50 text-indigo-800 border-indigo-100" }
                 ].map((member, index) => (
                   <div 

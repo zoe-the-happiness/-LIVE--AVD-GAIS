@@ -203,7 +203,7 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Piu Paul",
       "Dr. Parameswari Mandal",
       "Dr. Debraj Nandi",
-      "Dr. Soubhik Mondal",
+      "Dr. Souvik Mondal",
       "Dr. Sushovan Chowdhury",
       "Dr. Krishnendu Mondal",
       "Dr. Jyotirmay Adhikary"
