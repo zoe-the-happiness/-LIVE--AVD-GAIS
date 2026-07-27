@@ -192,10 +192,10 @@ export const subCommitteesData: SubCommittee[] = [
     jointConvenors: ["Dr. Gourisankar Hatui", "Dr. Amit Sarkar"],
     members: [
       "Dr. Bhaskar Prasad Maji",
-      "Dr. Kalidas Banerjee",
       "Dr. Sourav Chandra",
-      "Dr. Joydip Biswas",
+      "Dr. Kalidas Banerjee",
       "Dr. Anirban Ghosh",
+      "Dr. Joydip Biswas",
       "Dr. Tapan Chettri",
       "Dr. Sumit Chowdhury",
       "Dr. Apurba Chakraborty",
