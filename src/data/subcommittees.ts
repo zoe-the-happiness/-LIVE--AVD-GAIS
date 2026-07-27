@@ -90,7 +90,8 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Kuntal Dutta",
       "Dr. Sourav Mahanty",
       "Dr. Subhagata Dey",
-      "Dr. Arunava Saha"
+      "Dr. Arunava Saha",
+      "Dr. Abhradip Majumdar"
     ]
   },
   {
