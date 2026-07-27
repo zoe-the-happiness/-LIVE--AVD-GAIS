@@ -36,12 +36,12 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Raj Kumar Banerjee",
       "Dr. Utpal Singha",
       "Dr. Sanjib Sarkar",
-      "Dr. Utpal Bannerjee",
+      "Dr. Utpal Banerjee",
       "Dr. Gopal Samanta",
       "Dr. Rajib Kanti Saha",
-      "Dr. Rakesh Mondal",
-      "Dr. Brihat Chhetri",
-      "Dr. Sambho Chowdhury",
+      "Dr. Rakesh Mandal",
+      "Dr. Brihat Chettri",
+      "Dr. Shambo Chowdhury",
       "Dr. Keshab Chatterjee",
       "Dr. Sourav Kumar"
     ]
@@ -62,7 +62,7 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Liton Biswas",
       "Dr. Kingshuk Maity",
       "Dr. Tapabrata Saha",
-      "Dr. Mrityunjoy Mondal",
+      "Dr. Mrityunjay Mandal",
       "Dr. Arnab Kumar Majie",
       "Dr. Bithi Roy Chowdhury",
       "Dr. Supratim Mondal"
@@ -87,7 +87,7 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Manas Mondal",
       "Dr. Arindam Chatterjee",
       "Dr. Kuntal Dutta",
-      "Dr. Sourav Mohanty",
+      "Dr. Sourav Mahanty",
       "Dr. Subhagata Dey",
       "Dr. Arunava Saha"
     ]
@@ -105,7 +105,7 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Mandira Chowdhury",
       "Dr. Tista Mondal",
       "Dr. Aditi Patra",
-      "Dr. Nabanita Dutta",
+      "Dr. Nabanita Datta",
       "Dr. Aparna Das",
       "Dr. Sutrishna Basu"
     ]
@@ -130,7 +130,7 @@ export const subCommitteesData: SubCommittee[] = [
     members: [
       "Dr. Animesh Sikder",
       "Dr. Prabir Kumar Pathak",
-      "Dr. Sritanu Maity",
+      "Dr. Sritanu Maiti",
       "Dr. Jayanta Chowdhury (CLART)",
       "Dr. Nisith Panda",
       "Dr. Debjyoti Chatterjee",
@@ -138,7 +138,7 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Dipak Mondal (IAH&VB)",
       "Dr. Arup Kumar Ghosh",
       "Dr. Pulak Banerjee",
-      "Dr. Pushpendu Panja",
+      "Dr. Puspendu Panja",
       "Dr. Dipak Barh",
       "Dr. Samik Paul",
       "Dr. Chandi Charan Samanta",
@@ -190,7 +190,7 @@ export const subCommitteesData: SubCommittee[] = [
     jointConvenors: ["Dr. Gourisankar Hatui", "Dr. Amit Sarkar"],
     members: [
       "Dr. Bhaskar Prasad Maji",
-      "Dr. Kalidas Bannerjee",
+      "Dr. Kalidas Banerjee",
       "Dr. Sourav Chandra",
       "Dr. Joydip Biswas",
       "Dr. Anirban Ghosh",
@@ -200,13 +200,13 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Arnab Paul",
       "Dr. Sanjib Sarkar",
       "Dr. Dibyendu Bikash Karmakar",
-      "Dr. Piu Pal",
-      "Dr. Parameshwari Mandal",
+      "Dr. Piu Paul",
+      "Dr. Parameswari Mandal",
       "Dr. Debraj Nandi",
-      "Dr. Souvik Mondal",
+      "Dr. Soubhik Mondal",
       "Dr. Sushovan Chowdhury",
       "Dr. Krishnendu Mondal",
-      "Dr. Jyotirmoy Adhikary"
+      "Dr. Jyotirmay Adhikary"
     ],
     specialNote: "Faculty members of the West Bengal University of Animal and Fishery Sciences may be incorporated in this Sub-Committee by the Convenor with the approval of the Central Executive Committee."
   },
@@ -224,17 +224,17 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Swapan Kumar Jana",
       "Dr. Ashim Bose",
       "Dr. Bhaskar Prasad Maji",
-      "Dr. Debendra Pradhan",
-      "Dr. Sudanshu Sekher Das",
+      "Dr. Devendra Pradhan",
+      "Dr. Sudhangsu Sekhar Das",
       "Dr. Shyamalendu Biswas",
       "Dr. Raj Kumar Banerjee",
-      "Dr. Jayanta Dutta",
+      "Dr. Jayanta Datta",
       "Dr. Sourav Chandra",
       "Dr. Manas Kundu",
       "Dr. Atanu Saha",
       "Dr. Ram Krishna Ghosh",
       "Dr. Soumitra Pandit",
-      "Dr. Nilratan Mondal"
+      "Dr. Nilratan Mandal"
     ]
   },
   {
@@ -245,12 +245,12 @@ export const subCommitteesData: SubCommittee[] = [
     convenor: "Dr. Banibrata Nayek",
     members: [
       "Dr. Sujit Newar",
-      "Dr. Sandip Chowdhury",
-      "Dr. Dulumoni Chowdhury",
+      "Dr. Sandip Choudhury",
+      "Dr. Dulumani Choudhury",
       "Dr. Niranjan Roy",
       "Dr. Dwijen Mitra",
       "Dr. Sarbasish Mandal",
-      "Dr. Ritwik Hajra",
+      "Dr. Ritwik Hazra",
       "Dr. Soumitra Pandit",
       "Dr. Sanjib Kumar Das",
       "Dr. Shib Prasad Ghorai"
