@@ -257,7 +257,8 @@ export const subCommitteesData: SubCommittee[] = [
       "Dr. Ritwik Hazra",
       "Dr. Soumitra Pandit",
       "Dr. Sanjib Kumar Das",
-      "Dr. Shib Prasad Ghorai"
+      "Dr. Shib Prasad Ghorai",
+      "Dr. Annapurna Singha"
     ]
   }
 ];
